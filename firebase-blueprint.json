@@ -1,0 +1,75 @@
+{
+  "entities": {
+    "Program": {
+      "title": "Program",
+      "description": "Professional training programme offered by CETPD",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "type": { "type": "string", "enum": ["mastery", "short"] },
+        "overview": { "type": "string" },
+        "modules": { "type": "array", "items": { "type": "string" } },
+        "objectives": { "type": "array", "items": { "type": "string" } },
+        "targetGroup": { "type": "array", "items": { "type": "string" } },
+        "progressionRoute": { "type": "array", "items": { "type": "string" } },
+        "imageUrl": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["title", "type", "overview"]
+    },
+    "GalleryItem": {
+      "title": "Gallery Item",
+      "description": "Image in the site gallery",
+      "type": "object",
+      "properties": {
+        "src": { "type": "string" },
+        "title": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["src", "title"]
+    },
+    "Enquiry": {
+      "title": "Enquiry",
+      "description": "Contact form submission or application inquiry",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "programId": { "type": "string" },
+        "message": { "type": "string" },
+        "status": { "type": "string", "enum": ["new", "contacted", "closed"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "email", "phone"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Authorized administrator",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["superadmin", "editor"] }
+      },
+      "required": ["email"]
+    }
+  },
+  "firestore": {
+    "/programs/{programId}": {
+      "schema": "Program",
+      "description": "Collection of executive programmes"
+    },
+    "/gallery/{itemId}": {
+      "schema": "GalleryItem",
+      "description": "Items for the gallery section"
+    },
+    "/enquiries/{enquiryId}": {
+      "schema": "Enquiry",
+      "description": "Contact and application enquiries"
+    },
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "Whitelist of administrator users"
+    }
+  }
+}
