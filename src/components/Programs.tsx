@@ -63,35 +63,49 @@ export default function Programs() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.02 }}
               key={program.id}
-              className="p-8 md:p-12 border-r border-b border-cet-blue/10 flex flex-col hover:bg-slate-50 transition-colors group"
+              className="border-r border-b border-cet-blue/10 flex flex-col hover:bg-slate-50 transition-colors group"
             >
-              <div className="flex justify-between items-start mb-8">
-                <span className="text-[10px] font-bold text-cet-orange uppercase tracking-widest">
-                  {program.type === 'mastery' ? 'Mastery' : 'Short Course'}
-                </span>
-                <span className="text-[10px] font-mono text-slate-300">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
+              <div className="aspect-[16/9] relative overflow-hidden bg-slate-100 flex-shrink-0">
+                <img 
+                  src={program.imageUrl || "https://picsum.photos/seed/cert/800/600"} 
+                  alt={program.title}
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-cet-blue/20 group-hover:bg-transparent transition-colors duration-700"></div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-cet-orange text-white px-3 py-1 text-[8px] font-bold uppercase tracking-widest">
+                    {program.type === 'mastery' ? 'Mastery' : 'Short Course'}
+                  </span>
+                </div>
               </div>
-              <h4 className="text-xl font-display font-bold text-cet-blue mb-6 leading-tight group-hover:text-cet-orange transition-colors">
-                {program.title}
-              </h4>
-              <p className="text-slate-500 text-sm mb-12 leading-relaxed line-clamp-3">
-                {program.overview}
-              </p>
-              <div className="mt-auto flex items-center justify-between">
-                <Link 
-                  to={`/programmes/${program.id}`}
-                  className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-cet-blue hover:text-cet-orange transition-colors"
-                >
-                  View Details <ChevronRight size={14} />
-                </Link>
-                <Link 
-                  to="/apply" 
-                  className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-300 hover:text-cet-blue transition-colors"
-                >
-                  Apply
-                </Link>
+              
+              <div className="p-8 md:p-10 flex-grow flex flex-col">
+                <div className="flex justify-between items-start mb-6">
+                  <span className="text-[10px] font-mono text-slate-300">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+                </div>
+                <h4 className="text-lg font-display font-bold text-cet-blue mb-4 leading-tight group-hover:text-cet-orange transition-colors">
+                  {program.title}
+                </h4>
+                <p className="text-slate-500 text-xs mb-8 leading-relaxed line-clamp-3">
+                  {program.overview}
+                </p>
+                <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-6">
+                  <Link 
+                    to={`/programmes/${program.id}`}
+                    className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-cet-blue hover:text-cet-orange transition-colors"
+                  >
+                    View Details <ChevronRight size={14} />
+                  </Link>
+                  <Link 
+                    to="/apply" 
+                    className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-300 hover:text-cet-blue transition-colors"
+                  >
+                    Apply
+                  </Link>
+                </div>
               </div>
             </motion.div>
           ))}

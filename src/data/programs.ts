@@ -49,7 +49,8 @@ export const PROGRAMS: Program[] = [
     onlineOption: true,
     schedules: ['In-person classes: Saturdays, 8:00 am - 12:00 noon', 'Online classes: Sundays, 12:00 noon - 3:00 pm'],
     eligibility: ['WASSCE', 'SSSCE', 'ABCE', 'GBCE', 'NVTI'],
-    type: 'short-course'
+    type: 'short-course',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1kceh65i_Zmu-dBZQ8V2K0F1yAY2WWy2b'
   },
   {
     id: 'cop',
@@ -73,7 +74,8 @@ export const PROGRAMS: Program[] = [
     studyCentre: 'Civil Service Training Centre, Cantonments-Accra',
     onlineOption: true,
     progressionRoute: ['Certified Senior Administrative Professional', 'Certified Professional Administrator'],
-    type: 'mastery'
+    type: 'mastery',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1rcXm9IJrte36cMPv_pSHgjVNJ5zQlx0L'
   },
   {
     id: 'csap',
@@ -98,7 +100,8 @@ export const PROGRAMS: Program[] = [
     startDate: 'JUNE 6, 2026',
     studyCentre: 'Civil Service Training Centre, Cantonments-Accra',
     onlineOption: true,
-    type: 'mastery'
+    type: 'mastery',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1pvVKORP1b6ruSia0-fuo5QyjP1IUb-GQ'
   },
   {
     id: 'chpm',
@@ -126,7 +129,8 @@ export const PROGRAMS: Program[] = [
     studyCentre: 'Civil Service Training Centre, Cantonments-Accra',
     onlineOption: true,
     schedules: ['Saturday/Sunday Weekend Lectures only'],
-    type: 'mastery'
+    type: 'mastery',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1rTLjE3Wzg1y1emdzszgCF0OIajUanrUU'
   },
   {
     id: 'cpa',
@@ -172,7 +176,8 @@ export const PROGRAMS: Program[] = [
       'Chartered professional certification from any of the recognized Professional bodies with 5 years working experience.'
     ],
     progressionRoute: ['Management Consultancy Practice'],
-    type: 'mastery'
+    type: 'mastery',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1fxqjEGI1PPLD7pbC54_03ielArTvNWB3'
   },
   {
     id: 'omaap',
