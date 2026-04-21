@@ -152,8 +152,9 @@ export default function TrainingsPage() {
           <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="aspect-[4/3] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a3.jpg" 
+                src="https://drive.google.com/thumbnail?id=1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7&sz=w2000" 
                 alt="Executive Seminar" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
               />
             </div>

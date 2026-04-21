@@ -37,8 +37,9 @@ export default function ContactPage() {
     <main className="pt-32 sm:pt-40">
       <div className="bg-cet-blue py-32 text-white text-center relative overflow-hidden">
         <img 
-          src="/images/a9.jpg" 
+          src="https://drive.google.com/thumbnail?id=1lLaeWdQvJR2l2ExfpMLLaYjtKzACcZLx&sz=w2000" 
           alt="Contact Support" 
+          referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover opacity-10 brightness-50"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-cet-blue/40 to-cet-blue/80"></div>

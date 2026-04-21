@@ -50,7 +50,7 @@ export default function CETPDAdvantage() {
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-[4/5] relative">
               <img 
-                src="/images/a12.jpg" 
+                src="https://drive.google.com/thumbnail?id=1ZzuA3IHPeOjGovyTMri2fzBA6nkaKQbY&sz=w2000" 
                 alt="Executive Leadership" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover shadow-2xl relative z-10"
@@ -73,7 +73,7 @@ export default function CETPDAdvantage() {
         <div className="grid md:grid-cols-2 gap-8 h-[500px]">
           <div className="relative overflow-hidden group">
             <img 
-              src="/images/a11.jpg" 
+              src="https://drive.google.com/thumbnail?id=12eaXiBrBpFQg9P5z3WLwZ_bM8XNpnnvr&sz=w2000" 
               alt="Corporate Session" 
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -86,7 +86,7 @@ export default function CETPDAdvantage() {
           </div>
           <div className="relative overflow-hidden group">
             <img 
-              src="/images/a15.webp" 
+              src="https://drive.google.com/thumbnail?id=1kF4dHdOP28WfzWjXRxtAU-a0jOGkJLlT&sz=w2000" 
               alt="Academic Infrastructure" 
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"

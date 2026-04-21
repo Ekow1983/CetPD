@@ -1,18 +1,18 @@
 import React from 'react';
 
 const STATIC_GALLERY = [
+  { src: "https://drive.google.com/thumbnail?id=1Ntu_x7LAprunFLUCGeVwaG4AA76SP50O&sz=w2000", title: "Institutional Excellence" },
+  { src: "https://drive.google.com/thumbnail?id=1NOWd8HsVfSIf-pf1Ym7wza6XMhyuF333&sz=w2000", title: "Professional Certification Seminar" },
+  { src: "https://drive.google.com/thumbnail?id=1UlIEhnDFdcrwblFpL_nimCR0V7duiVjg&sz=w2000", title: "Executive Leadership Forum" },
+  { src: "https://drive.google.com/thumbnail?id=18vYMJ1oEF_kJ9seolpBYqJiPQugxu8RX&sz=w2000", title: "Strategic Networking Gala" },
+  { src: "https://drive.google.com/thumbnail?id=1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7&sz=w2000", title: "Academic Standards Workshop" },
+  { src: "https://drive.google.com/thumbnail?id=1lLaeWdQvJR2l2ExfpMLLaYjtKzACcZLx&sz=w2000", title: "Direct Contact Support" },
   { src: "/images/a1.jpg", title: "Executive Board Session" },
   { src: "/images/a2.jpg", title: "Corporate Leadership Training" },
   { src: "/images/a3.jpg", title: "Academic Excellence Forum" },
   { src: "/images/a4.jpg", title: "Professional Development Workshop" },
   { src: "/images/a5.jpg", title: "Institutional Mentorship" },
-  { src: "/images/a6.jpg", title: "Strategic Planning Seminar" },
-  { src: "/images/a7-1.jpg", title: "Industry Partnership Gala" },
-  { src: "/images/a8-1.jpg", title: "Executive Mastery Graduation" },
-  { src: "/images/a9.jpg", title: "International Standards Colloquium" },
-  { src: "/images/a11.jpg", title: "Advanced Management Course" },
-  { src: "/images/a13.jpg", title: "Elite Executive Network" },
-  { src: "/images/a15.webp", title: "Modern Learning Infrastructure" }
+  { src: "/images/a6.jpg", title: "Strategic Planning Seminar" }
 ];
 
 export default function GalleryPage() {

@@ -39,15 +39,17 @@ export default function About() {
             </div>
             <div className="border-b border-cet-blue/10 overflow-hidden h-64 md:h-[400px]">
               <img 
-                src="/images/a1.jpg" 
+                src="https://drive.google.com/thumbnail?id=1A1pr7F7x36WurI92dl2Qb91WvH_RveBV&sz=w2000" 
                 alt="Executive Session" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:brightness-110 transition-all duration-700"
               />
             </div>
             <div className="border-r border-cet-blue/10 overflow-hidden h-64 md:h-[400px]">
               <img 
-                src="/images/a2.jpg" 
+                src="https://drive.google.com/thumbnail?id=1pstOB32KhxQdvlK61GbzGlshMN09wtSP&sz=w2000" 
                 alt="Corporate Training" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover hover:brightness-110 transition-all duration-700"
               />
             </div>

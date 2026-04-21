@@ -18,8 +18,9 @@ export default function ApplyPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="h-64 md:h-[400px] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a7-1.jpg" 
+                src="https://drive.google.com/thumbnail?id=1UlIEhnDFdcrwblFpL_nimCR0V7duiVjg&sz=w2000" 
                 alt="Corporate Event" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
               />
             </div>

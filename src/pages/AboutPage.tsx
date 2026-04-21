@@ -105,8 +105,9 @@ export default function AboutPage() {
           <div className="grid lg:grid-cols-2 gap-0 border border-cet-blue/10">
             <div className="relative h-80 lg:h-auto overflow-hidden">
               <img 
-                src="/images/a12.jpg" 
+                src="https://drive.google.com/thumbnail?id=1NOWd8HsVfSIf-pf1Ym7wza6XMhyuF333&sz=w2000" 
                 alt="Certification" 
+                referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-cet-blue/20"></div>
@@ -132,16 +133,18 @@ export default function AboutPage() {
           <div className="grid grid-cols-2 gap-4">
             <div className="aspect-[4/5] relative overflow-hidden group">
               <img 
-                src="/images/a5.jpg" 
+                src="https://drive.google.com/thumbnail?id=1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7&sz=w2000" 
                 alt="Institutional Mentorship" 
+                referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover grayscale transform group-hover:scale-110 group-hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-cet-blue/10"></div>
             </div>
             <div className="aspect-[4/5] relative overflow-hidden group mt-12">
               <img 
-                src="/images/a6.jpg" 
+                src="https://drive.google.com/thumbnail?id=1lLaeWdQvJR2l2ExfpMLLaYjtKzACcZLx&sz=w2000" 
                 alt="Strategic Planning" 
+                referrerPolicy="no-referrer"
                 className="absolute inset-0 w-full h-full object-cover grayscale transform group-hover:scale-110 group-hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-cet-blue/10"></div>

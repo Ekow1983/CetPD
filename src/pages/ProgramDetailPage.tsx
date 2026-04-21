@@ -89,10 +89,72 @@ export default function ProgramDetailPage() {
                   </ul>
                 </div>
               )}
+
+              {/* Schedules */}
+              {program.schedules && (
+                <div>
+                  <h2 className="text-2xl font-display font-bold text-cet-blue mb-6 flex items-center gap-3">
+                    <TrendingUp className="text-cet-orange" /> Class Schedules
+                  </h2>
+                  <div className="space-y-4">
+                    {program.schedules.map((schedule, index) => (
+                      <div key={index} className="p-4 bg-slate-50 border-l-4 border-cet-orange">
+                        <p className="text-slate-700 font-medium">{schedule}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}
             <div className="space-y-12">
+              {/* Quick Details */}
+              <div className="bg-slate-50 p-8 border border-slate-100">
+                <h3 className="text-xl font-display font-bold text-cet-blue mb-6">Quick Details</h3>
+                <div className="space-y-4">
+                  {program.duration && (
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-slate-400">Duration</span>
+                      <span className="text-cet-blue font-bold">{program.duration}</span>
+                    </div>
+                  )}
+                  {program.startDate && (
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-slate-400">Start Date</span>
+                      <span className="text-cet-blue font-bold">{program.startDate}</span>
+                    </div>
+                  )}
+                  {program.fee && (
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-slate-400">Tuition Fee</span>
+                      <span className="text-cet-blue font-bold">{program.fee}</span>
+                    </div>
+                  )}
+                  {program.onlineOption !== undefined && (
+                    <div className="flex justify-between items-center text-sm">
+                      <span className="text-slate-400">Online Option</span>
+                      <span className="text-cet-blue font-bold">{program.onlineOption ? 'Available' : 'In-person Only'}</span>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* Specialisations */}
+              {program.specialisations && (
+                <div className="bg-cet-orange/5 p-8 border border-cet-orange/20">
+                  <h3 className="text-xl font-display font-bold text-cet-blue mb-6">Specialisations</h3>
+                  <ul className="space-y-3">
+                    {program.specialisations.map((spec, index) => (
+                      <li key={index} className="text-sm text-slate-600 flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-cet-orange mt-1.5 shrink-0"></div>
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
               {/* Target Group */}
               {program.targetGroup && (
                 <div className="bg-slate-50 p-8 border border-slate-100">
@@ -106,6 +168,20 @@ export default function ProgramDetailPage() {
                       </span>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* Requirements / Eligibility */}
+              {(program.requirements || program.eligibility) && (
+                <div className="bg-slate-50 p-8 border border-slate-100">
+                  <h3 className="text-xl font-display font-bold text-cet-blue mb-6">Entry Requirements</h3>
+                  <ul className="space-y-3">
+                    {(program.requirements || program.eligibility || []).map((req, index) => (
+                      <li key={index} className="text-xs text-slate-600 border-l-2 border-cet-orange pl-3">
+                        {req}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
 
@@ -125,6 +201,20 @@ export default function ProgramDetailPage() {
                       </div>
                     ))}
                   </div>
+                </div>
+              )}
+
+              {/* Investment Summary */}
+              {program.investment && (
+                <div className="bg-slate-900 p-8 text-white">
+                  <h3 className="text-xl font-display font-bold mb-6 text-cet-orange">Investment Summary</h3>
+                  <ul className="space-y-3">
+                    {program.investment.map((line, index) => (
+                      <li key={index} className={`text-sm ${line.includes('Total') ? 'pt-4 border-t border-white/10 font-bold text-cet-orange' : 'text-slate-400'}`}>
+                        {line}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
 

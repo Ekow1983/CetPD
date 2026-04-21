@@ -79,8 +79,9 @@ export default function HowToApplyPage() {
           <div className="grid grid-cols-2 gap-8 py-12">
             <div className="aspect-[21/9] col-span-2 overflow-hidden bg-slate-100">
               <img 
-                src="/images/a7-1.jpg" 
+                src="https://drive.google.com/thumbnail?id=18vYMJ1oEF_kJ9seolpBYqJiPQugxu8RX&sz=w2000" 
                 alt="Networking Gala" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover brightness-110 hover:brightness-125 transition-all duration-1000"
               />
             </div>

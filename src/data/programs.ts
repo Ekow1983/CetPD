@@ -8,9 +8,172 @@ export interface Program {
   progressionRoute?: string[];
   type: 'mastery' | 'short-course';
   imageUrl?: string;
+  duration?: string;
+  fee?: string;
+  startDate?: string;
+  studyCentre?: string;
+  onlineOption?: boolean;
+  schedules?: string[];
+  eligibility?: string[];
+  specialisations?: string[];
+  investment?: string[];
+  requirements?: string[];
 }
 
 export const PROGRAMS: Program[] = [
+  {
+    id: 'caop',
+    title: 'Certified Associate Office Professional (CAoP)',
+    overview: 'This course provides a comprehensive introduction to the principles and practices of office management, equipping students with the skills and knowledge necessary to excel in administrative roles. With a focus on the fundamentals of office administration, this course covers key areas such as office operations, communication, time management, and document management. Students will learn about the role of the office administrator, including managing office systems, coordinating tasks, and providing administrative support.',
+    modules: [
+      'OFFICE ADMINISTRATION FUNDAMENTALS: Office roles and responsibilities, Communication skills, Office software essentials (e.g., MS Office)',
+      'TIME AND TASK MANAGEMENT: Prioritization techniques, Scheduling and calendar management, Meeting and email management',
+      'HANDLING CLERICAL ACTIVITIES: Typing and document preparation, Filing systems and record keeping, Printing, scanning, and photocopying',
+      'REPORT WRITING SKILLS: Types of reports (formal, informal, progress), Report structure and formatting, Writing clear and concise reports',
+      'OFFICE OPERATIONS AND LOGISTICS: Office supplies and inventory, Travel arrangements and logistics, Facilities management basics',
+      'MAIL HANDLING AND CORRESPONDENCE: Incoming and outgoing mail management, Email etiquette and protocols, Correspondence best practices',
+      'DATA ENTRY AND MANAGEMENT: Data entry techniques and accuracy, Data management systems and software, Data protection and confidentiality',
+      'DOCUMENT MANAGEMENT AND RECORDS KEEPING: Document control and tracking, Confidentiality and data protection, Electronic document management systems'
+    ],
+    objectives: [
+      'Master essential office administration concepts',
+      'Develop task and time management skills',
+      'Understand clerical and record-keeping activities',
+      'Acquire professional report writing and communication skills'
+    ],
+    targetGroup: ['Junior Office Professionals', 'Administrative Assistants', 'Entry-level Clerks', 'Office Support Staff'],
+    duration: '3 months',
+    fee: 'GHC 3,000 (payable in 3 or 6 installments)',
+    startDate: '6th June, 2026',
+    studyCentre: 'Civil Service Training Centre, Cantonments-Accra',
+    onlineOption: true,
+    schedules: ['In-person classes: Saturdays, 8:00 am - 12:00 noon', 'Online classes: Sundays, 12:00 noon - 3:00 pm'],
+    eligibility: ['WASSCE', 'SSSCE', 'ABCE', 'GBCE', 'NVTI'],
+    type: 'short-course'
+  },
+  {
+    id: 'cop',
+    title: 'Certified Office Professional (CoP)',
+    overview: 'BECOME A CERTIFIED OFFICE PROFESSIONAL IN 6 MONTHS. Join the prestigious Office Management and Administrative Assistantship Programme and be Certified as an Office Professional. Affiliated with the Chartered Institute of Administrators and Management Consultants (CIAMC), this comprehensive 6-month program equips you with the skills and knowledge needed to excel in today\'s fast-paced business environment.',
+    modules: [
+      'OFFICE MANAGEMENT AND PRACTICES: Master fundamentals including planning, organizing, and controlling office procedures.',
+      'RECORDS KEEPING, FILING & DOCUMENTATION: Efficient records management techniques to maintain accurate and up-to-date documentation.',
+      'RECEPTION MANAGEMENT AND PUBLIC RELATIONS: Managing front office operations and institutional image.',
+      'OFFICE PROCEDURES AND SYSTEMS: Understanding institutional structures and operational protocols.'
+    ],
+    objectives: [
+      'Attain professional certification as an Office Professional',
+      'Master administrative assistantship skills',
+      'Develop organizational and procedural expertise'
+    ],
+    targetGroup: ['Administrative Assistants', 'Office Professionals', 'Executive Secretaries', 'Front Desk Officers'],
+    duration: '6 months',
+    fee: 'GHC5,200 (Payable in 5 instalments)',
+    startDate: 'JUNE 6, 2026',
+    studyCentre: 'Civil Service Training Centre, Cantonments-Accra',
+    onlineOption: true,
+    progressionRoute: ['Certified Senior Administrative Professional', 'Certified Professional Administrator'],
+    type: 'mastery'
+  },
+  {
+    id: 'csap',
+    title: 'Certified Senior Administrative Professional (CSaP)',
+    overview: 'BECOME A CERTIFIED ADMINISTRATIVE PROFESSIONAL IN 6 MONTHS. YOUR GATEWAY TO SENIOR ADMINISTRATIVE ROLES. Join the Advanced Certification in Office Management Proficiency Programme, designed to equip you with the advanced knowledge, skills and competencies required to excel in Senior Administrative Roles.',
+    modules: [
+      'OFFICE PROCEDURES, POLICIES AND TOOLS: Streamlining processes and increasing work efficiency.',
+      'PRINCIPLES OF MANAGEMENT: Leading and managing teams effectively.',
+      'HUMAN RELATIONS AND INTERPERSONAL SKILLS: Building strong professional relationships.',
+      'EFFECTIVE COMMUNICATION SKILLS: Negotiating and articulating ideas with stakeholders.',
+      'FINANCE PRINCIPLES, ASSET MANAGEMENT AND PROCUREMENT: Managing resources and finances with confidence.',
+      'ETHICAL VALUES AND PERSONAL EFFECTIVENESS: Developing integrity and professionalism at work.'
+    ],
+    objectives: [
+      'Prepare for senior administrative leadership roles',
+      'Improve institutional productivity and leadership skills',
+      'Gain a competitive advantage with advanced qualifications'
+    ],
+    targetGroup: ['Senior Front Desk Officers', 'Administrative Managers', 'Principal Secretaries', 'Senior Executive Assistants', 'Office Managers'],
+    duration: '6 months',
+    fee: 'GHC5,200 (Payable in 5 instalments)',
+    startDate: 'JUNE 6, 2026',
+    studyCentre: 'Civil Service Training Centre, Cantonments-Accra',
+    onlineOption: true,
+    type: 'mastery'
+  },
+  {
+    id: 'chpm',
+    title: 'Certified High-Performance Manager (CHPM)',
+    overview: 'BECOME A CERTIFIED HIGH-PERFORMANCE MANAGER (CHPM). THE GOLD STANDARD CERTIFICATION PROGRAMME FOR MANAGERS. Take your career to new height by joining the rank of elite Managers. This comprehensive certification programme is designed to equip you with the skills and knowledge required to excel in top-tier managerial positions.',
+    modules: [
+      'PEOPLE MANAGEMENT AND SUPERVISION: Oversee daily operations and ensure seamless workflow.',
+      'MANAGERIAL DECISION MAKING: Acquire ability to make informed, strategic decisions.',
+      'ADVANCED COMMUNICATION SKILLS FOR MANAGERS: Master techniques to inspire and motivate your team.',
+      'STRATEGIC LEADERSHIP: Drive business growth and success through empowerment.',
+      'INTRODUCTION TO HUMAN RESOURCE MANAGEMENT: Recruitment, talent management, and employee development.',
+      'UNDERSTANDING EMOTIONAL INTELLIGENCE: Build stronger relationships and make better decisions.',
+      'STRATEGIC GOAL SETTING AND PLANNING: Prioritize tasks and allocate resources effectively.',
+      'NEGOTIATIONS SKILLS FOR MANAGERS: Build relationships and resolve conflicts.'
+    ],
+    objectives: [
+      'Equip with skills for top-tier managerial positions',
+      'Enhance decision-making and leadership capabilities',
+      'Increase earning potential and professional recognition'
+    ],
+    targetGroup: ['Managers', 'Team Leaders', 'Business Executives', 'Operations Managers'],
+    duration: '6 months',
+    fee: 'GHC6,500 (Payable in 5 instalments)',
+    startDate: '6th June, 2026',
+    studyCentre: 'Civil Service Training Centre, Cantonments-Accra',
+    onlineOption: true,
+    schedules: ['Saturday/Sunday Weekend Lectures only'],
+    type: 'mastery'
+  },
+  {
+    id: 'cpa',
+    title: 'Certified Professional Administrator (CPA)',
+    overview: 'BECOME A CERTIFIED PROFESSIONAL ADMINISTRATOR (CPA). Join Ghana\'s premier Competency-Based Certification Programme for ambitious Managers, Business and Corporate Executives, CEOs, Senior Officers, Directors, School Heads, Religious Leaders and upcoming Administrators. Gain a prestigious licence from the Chartered Institute of Administrators and Management Consultants (CIAMC) to practice.',
+    modules: [
+      'STRATEGIC MANAGEMENT AND LEADERSHIP',
+      'CORPORATE GOVERNANCE AND BUSINESS SUSTAINABILITY',
+      'STRATEGIC PLANNING',
+      'CORPORATE SOCIAL RESPONSIBILITY',
+      'FINANCE FOR NON-FINANCE ADMINISTRATORS',
+      'ESSENTIAL COMMUNICATION SKILLS FOR ADMINISTRATORS',
+      'CRITICAL THINKING AND PROBLEM SOLVING',
+      'MASTERING DELEGATION',
+      'LABOUR LAW AND UNION MANAGEMENT',
+      'POLICY FORMULATION AND IMPLEMENTATION',
+      'PRODUCTIVITY TOOLS FOR ADMINISTRATORS',
+      'STRATEGIC PARTNERSHIPS AND ALLIANCE'
+    ],
+    objectives: [
+      'Gain a professional license from CIAMC',
+      'Master strategic governance and leadership',
+      'Specialise in high-demand administrative areas'
+    ],
+    targetGroup: ['CEOs', 'Directors', 'Senior Officers', 'School Heads', 'Religious Leaders', 'Ambitious Managers'],
+    duration: '6 months',
+    fee: 'GHC5,000 (payable in 5 instalments)',
+    startDate: 'May 16, 2026',
+    studyCentre: 'Civil Service Training Centre, Cantonments-Accra',
+    onlineOption: true,
+    investment: ['Registration Fee: GHC200', 'Tuition Fee: GHC5,000', 'Licensing and Certification: GHC1,350', 'Graduation: GHC950', 'Grand Total: GHC7,500'],
+    specialisations: [
+      'Strategic Management and Planning',
+      'Governance, Risk, and Compliance',
+      'Leadership and Organisational Development',
+      'Total Quality Management and Operational Excellence',
+      'Strategic Communication, Marketing and Crisis Management'
+    ],
+    requirements: [
+      'HND with 8 years\' managerial experience',
+      'Degree with 5 years managerial experience',
+      'Master\'s with 3 years Working Experience',
+      'Chartered professional certification from any of the recognized Professional bodies with 5 years working experience.'
+    ],
+    progressionRoute: ['Management Consultancy Practice'],
+    type: 'mastery'
+  },
   {
     id: 'omaap',
     title: 'Office Management and Administrative Assistantship Programme (OMAAP)',

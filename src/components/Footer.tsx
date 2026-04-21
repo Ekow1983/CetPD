@@ -45,11 +45,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6 border-b border-white/10 pb-2 inline-block">Programmes</h4>
             <ul className="space-y-4 text-slate-400 text-sm">
-              <li><Link to="/programmes/omaap" className="hover:text-cet-orange transition-colors">Office Management</Link></li>
-              <li><Link to="/programmes/business-management-admin" className="hover:text-cet-orange transition-colors">Business Administration</Link></li>
-              <li><Link to="/programmes/digital-marketing-cert" className="hover:text-cet-orange transition-colors">Digital Marketing</Link></li>
-              <li><Link to="/programmes/it-service-mgmt" className="hover:text-cet-orange transition-colors">IT Service Management</Link></li>
-              <li><Link to="/programmes/educational-leadership" className="hover:text-cet-orange transition-colors">Educational Leadership</Link></li>
+              <li><Link to="/programmes/caop" className="hover:text-cet-orange transition-colors">Associate Office Professional (CAoP)</Link></li>
+              <li><Link to="/programmes/cop" className="hover:text-cet-orange transition-colors">Office Professional (CoP)</Link></li>
+              <li><Link to="/programmes/csap" className="hover:text-cet-orange transition-colors">Senior Admin Professional (CSaP)</Link></li>
+              <li><Link to="/programmes/chpm" className="hover:text-cet-orange transition-colors">High-Performance Manager (CHPM)</Link></li>
+              <li><Link to="/programmes/cpa" className="hover:text-cet-orange transition-colors">Professional Administrator (CPA)</Link></li>
             </ul>
           </div>
 
