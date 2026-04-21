@@ -67,12 +67,12 @@ export default function Programs() {
             >
               <div className="aspect-[16/9] relative overflow-hidden bg-slate-100 flex-shrink-0">
                 <img 
-                  src={program.imageUrl || "https://picsum.photos/seed/cert/800/600"} 
+                  src={`${program.imageUrl || "https://picsum.photos/seed/cert/1000/600"}=s1000`} 
                   alt={program.title}
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+                  className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-cet-blue/20 group-hover:bg-transparent transition-colors duration-700"></div>
+                <div className="absolute inset-0 bg-cet-blue/10 group-hover:bg-transparent transition-colors duration-700"></div>
                 <div className="absolute top-4 left-4">
                   <span className="bg-cet-orange text-white px-3 py-1 text-[8px] font-bold uppercase tracking-widest">
                     {program.type === 'mastery' ? 'Mastery' : 'Short Course'}

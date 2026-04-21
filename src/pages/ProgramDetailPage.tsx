@@ -23,8 +23,9 @@ export default function ProgramDetailPage() {
       {/* Header */}
       <div className="bg-cet-blue py-32 text-white relative overflow-hidden">
         <img 
-          src={(program.imageUrl || "/images/a11.jpg").replace('.jpeg', '.jpg')} 
+          src={`${program.imageUrl || "https://lh3.googleusercontent.com/d/1NOWd8HsVfSIf-pf1Ym7wza6XMhyuF333"}=s2000`} 
           alt="Course Header" 
+          referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover opacity-20 brightness-50"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-cet-blue via-cet-blue/60 to-transparent"></div>

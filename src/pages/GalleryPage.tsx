@@ -7,12 +7,12 @@ const STATIC_GALLERY = [
   { src: "https://lh3.googleusercontent.com/d/18vYMJ1oEF_kJ9seolpBYqJiPQugxu8RX", title: "Strategic Networking Gala" },
   { src: "https://lh3.googleusercontent.com/d/1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7", title: "Academic Standards Workshop" },
   { src: "https://lh3.googleusercontent.com/d/1lLaeWdQvJR2l2ExfpMLLaYjtKzACcZLx", title: "Direct Contact Support" },
-  { src: "/images/a1.jpg", title: "Executive Board Session" },
-  { src: "/images/a2.jpg", title: "Corporate Leadership Training" },
-  { src: "/images/a3.jpg", title: "Academic Excellence Forum" },
-  { src: "/images/a4.jpg", title: "Professional Development Workshop" },
-  { src: "/images/a5.jpg", title: "Institutional Mentorship" },
-  { src: "/images/a6.jpg", title: "Strategic Planning Seminar" }
+  { src: "https://lh3.googleusercontent.com/d/1NOWd8HsVfSIf-pf1Ym7wza6XMhyuF333", title: "Executive Board Session" },
+  { src: "https://lh3.googleusercontent.com/d/1UlIEhnDFdcrwblFpL_nimCR0V7duiVjg", title: "Corporate Leadership Training" },
+  { src: "https://lh3.googleusercontent.com/d/18vYMJ1oEF_kJ9seolpBYqJiPQugxu8RX", title: "Academic Excellence Forum" },
+  { src: "https://lh3.googleusercontent.com/d/1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7", title: "Professional Development Workshop" },
+  { src: "https://lh3.googleusercontent.com/d/1Ntu_x7LAprunFLUCGeVwaG4AA76SP50O", title: "Institutional Mentorship" },
+  { src: "https://lh3.googleusercontent.com/d/1ajc2pRlERDoD8c0dlx3IEGnoI3xP3uDS", title: "Strategic Planning Seminar" }
 ];
 
 export default function GalleryPage() {
