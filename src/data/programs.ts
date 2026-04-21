@@ -23,7 +23,7 @@ export interface Program {
 export const PROGRAMS: Program[] = [
   {
     id: 'caop',
-    title: 'Certified Associate Office Professional (CAoP)',
+    title: 'Associate Certified Office Professional (aCoP)',
     overview: 'This course provides a comprehensive introduction to the principles and practices of office management, equipping students with the skills and knowledge necessary to excel in administrative roles. With a focus on the fundamentals of office administration, this course covers key areas such as office operations, communication, time management, and document management. Students will learn about the role of the office administrator, including managing office systems, coordinating tasks, and providing administrative support.',
     modules: [
       'OFFICE ADMINISTRATION FUNDAMENTALS: Office roles and responsibilities, Communication skills, Office software essentials (e.g., MS Office)',

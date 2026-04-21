@@ -6,12 +6,12 @@ import { submitForm } from '../services/formService';
 
 const HERO_SLIDES = [
   {
-    image: 'https://lh3.googleusercontent.com/d/1u4knyb7LKTkzSmJK8k6idCL6KXzM3ZOb',
+    image: 'https://lh3.googleusercontent.com/d/1DR8F9nZsQ0XDKuvAEsatFjS8D061fEgd',
     title: <>EXECUTIVE <br /><span className="text-cet-orange italic">MASTERY</span> <br />PORTFOLIO.</>,
     caption: "Experience elite-level professional development with our flagship executive programmes and industry leadership sessions."
   },
   {
-    image: 'https://lh3.googleusercontent.com/d/1mnJvZyXJxJPEuML_ucPEFaxVBXmHAUvV',
+    image: 'https://lh3.googleusercontent.com/d/1zqUO-P9tNZROIw7IFKa5EgegVscJLJmN',
     title: <>MASTER <br /><span className="text-cet-orange italic">EXECUTIVE</span> <br />LEADERSHIP.</>,
     caption: "Empowering the next generation of global leaders through world-class executive training and leadership development."
   },

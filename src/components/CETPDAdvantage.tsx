@@ -50,7 +50,7 @@ export default function CETPDAdvantage() {
           <div className="order-1 lg:order-2 relative">
             <div className="aspect-[4/5] relative">
               <img 
-                src="https://lh3.googleusercontent.com/d/1ZzuA3IHPeOjGovyTMri2fzBA6nkaKQbY" 
+                src="https://lh3.googleusercontent.com/d/1ajc2pRlERDoD8c0dlx3IEGnoI3xP3uDS" 
                 alt="Executive Leadership" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover shadow-2xl relative z-10"

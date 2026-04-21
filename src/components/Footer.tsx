@@ -45,11 +45,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6 border-b border-white/10 pb-2 inline-block">Programmes</h4>
             <ul className="space-y-4 text-slate-400 text-sm">
-              <li><Link to="/programmes/caop" className="hover:text-cet-orange transition-colors">Associate Office Professional (CAoP)</Link></li>
-              <li><Link to="/programmes/cop" className="hover:text-cet-orange transition-colors">Office Professional (CoP)</Link></li>
-              <li><Link to="/programmes/csap" className="hover:text-cet-orange transition-colors">Senior Admin Professional (CSaP)</Link></li>
-              <li><Link to="/programmes/chpm" className="hover:text-cet-orange transition-colors">High-Performance Manager (CHPM)</Link></li>
-              <li><Link to="/programmes/cpa" className="hover:text-cet-orange transition-colors">Professional Administrator (CPA)</Link></li>
+              <li><Link to="/programmes/caop" className="hover:text-cet-orange transition-colors">Associate Certified Office Professional (aCoP)</Link></li>
+              <li><Link to="/programmes/cop" className="hover:text-cet-orange transition-colors">Certified Office Professional (CoP)</Link></li>
+              <li><Link to="/programmes/csap" className="hover:text-cet-orange transition-colors">Certified Senior Administrative Professional (CSaP)</Link></li>
+              <li><Link to="/programmes/chpm" className="hover:text-cet-orange transition-colors">Certified High-Performance Manager (CHPM)</Link></li>
+              <li><Link to="/programmes/cpa" className="hover:text-cet-orange transition-colors">Certified Professional Administrator (CPA)</Link></li>
             </ul>
           </div>
 

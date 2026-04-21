@@ -33,29 +33,14 @@ export default function About() {
           </div>
 
           {/* Right: Visuals */}
-          <div className="grid grid-cols-2 grid-rows-2">
-            <div className="border-r border-b border-cet-blue/10 p-8 flex items-center justify-center bg-cet-blue text-white">
-              <Target size={48} className="text-cet-orange" />
-            </div>
-            <div className="border-b border-cet-blue/10 overflow-hidden h-64 md:h-[400px]">
-              <img 
-                src="https://lh3.googleusercontent.com/d/1A1pr7F7x36WurI92dl2Qb91WvH_RveBV" 
-                alt="Executive Session" 
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover hover:brightness-110 transition-all duration-700"
-              />
-            </div>
-            <div className="border-r border-cet-blue/10 overflow-hidden h-64 md:h-[400px]">
-              <img 
-                src="https://lh3.googleusercontent.com/d/1pstOB32KhxQdvlK61GbzGlshMN09wtSP" 
-                alt="Corporate Training" 
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover hover:brightness-110 transition-all duration-700"
-              />
-            </div>
-            <div className="p-8 flex items-center justify-center bg-cet-orange text-white">
-              <Award size={48} />
-            </div>
+          <div className="relative overflow-hidden h-[400px] lg:h-full border-l border-cet-blue/10">
+            <img 
+              src="https://lh3.googleusercontent.com/d/1ajc2pRlERDoD8c0dlx3IEGnoI3xP3uDS" 
+              alt="Executive Excellence" 
+              referrerPolicy="no-referrer"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+            />
+            <div className="absolute inset-0 bg-cet-blue/10"></div>
           </div>
         </div>
       </div>
