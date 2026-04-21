@@ -33,14 +33,32 @@ export default function About() {
           </div>
 
           {/* Right: Visuals */}
-          <div className="relative overflow-hidden h-[400px] lg:h-full border-l border-cet-blue/10">
-            <img 
-              src="https://lh3.googleusercontent.com/d/1hPuatWePBywHOnrpjhT3p2YnJHn1XDvi" 
-              alt="Executive Excellence" 
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
-            />
-            <div className="absolute inset-0 bg-cet-blue/10"></div>
+          <div className="relative overflow-hidden min-h-[500px] lg:h-auto bg-slate-50 flex items-center justify-center p-8 lg:p-12">
+            <div className="relative w-full h-full max-w-md mx-auto group">
+              {/* Decorative Frame */}
+              <div className="absolute -top-4 -left-4 w-full h-full border border-cet-orange/20 z-0"></div>
+              <div className="absolute top-4 left-4 w-full h-full border border-cet-blue/10 z-0 bg-white"></div>
+              
+              <div className="relative z-10 w-full h-full overflow-hidden shadow-2xl skew-x-[-1deg]">
+                <img 
+                  src="https://lh3.googleusercontent.com/d/1hPuatWePBywHOnrpjhT3p2YnJHn1XDvi=s1500" 
+                  alt="Executive Excellence" 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-cet-blue/5 group-hover:bg-transparent transition-colors duration-1000"></div>
+              </div>
+              
+              {/* Micro-Label floating */}
+              <div className="absolute bottom-8 -right-8 z-20 bg-cet-blue text-white p-6 shadow-2xl max-w-[180px] hidden xl:block">
+                <span className="block text-[8px] uppercase tracking-[0.4em] mb-2 opacity-60">Established</span>
+                <span className="block text-2xl font-display font-medium text-cet-orange">2009.</span>
+                <div className="mt-4 h-px w-full bg-white/10"></div>
+                <p className="mt-4 text-[7px] leading-relaxed uppercase tracking-widest text-white/50">
+                  Leading the West African executive development landscape for nearly two decades.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
