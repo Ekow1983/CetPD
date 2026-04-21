@@ -6,7 +6,7 @@ export default function ProgramsPage() {
     <main className="pt-32 sm:pt-40">
       <div className="bg-cet-blue py-24 text-white text-center relative overflow-hidden">
         <img 
-          src="https://lh3.googleusercontent.com/d/1Ntu_x7LAprunFLUCGeVwaG4AA76SP50O=s2000" 
+          src="https://lh3.googleusercontent.com/d/1Ntu_x7LAprunFLUCGeVwaG4AA76SP50O" 
           alt="Programmes" 
           referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover opacity-10"

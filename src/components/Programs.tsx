@@ -54,71 +54,56 @@ export default function Programs() {
         </div>
 
         {/* Programs Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0 border-t border-l border-cet-blue/10">
           {filteredPrograms.map((program, index) => (
             <motion.div
               layout
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
+              transition={{ delay: index * 0.02 }}
               key={program.id}
-              className="flex flex-col group relative"
+              className="border-r border-b border-cet-blue/10 flex flex-col hover:bg-slate-50 transition-colors group"
             >
-              {/* Image Container with Offset Frame */}
-              <div className="relative mb-8 px-4">
-                <div className="aspect-[4/5] overflow-hidden relative z-10 border border-cet-blue/5 shadow-xl">
-                  <img 
-                    src={`${program.imageUrl || "https://picsum.photos/seed/cert/1000/1250"}=s1500`} 
-                    alt={program.title}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover transition-all duration-1000 transform group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-cet-blue/5 group-hover:bg-transparent transition-colors duration-700"></div>
-                </div>
-                {/* Decorative Elements */}
-                <div className="absolute -top-4 -right-2 w-24 h-24 border-t border-r border-cet-orange/30 -z-0"></div>
-                <div className="absolute -bottom-4 -left-2 w-24 h-24 border-b border-l border-cet-blue/10 -z-0"></div>
-                
-                {/* Badge */}
-                <div className="absolute top-8 left-0 z-20">
-                  <span className="bg-cet-orange text-white px-4 py-1.5 text-[8px] font-bold uppercase tracking-[0.3em] shadow-lg">
-                    {program.type === 'mastery' ? 'Elite Mastery' : 'Executive Core'}
+              <div className="aspect-[16/9] relative overflow-hidden bg-slate-100 flex-shrink-0">
+                <img 
+                  src={program.imageUrl || "https://picsum.photos/seed/cert/800/600"} 
+                  alt={program.title}
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-cet-blue/20 group-hover:bg-transparent transition-colors duration-700"></div>
+                <div className="absolute top-4 left-4">
+                  <span className="bg-cet-orange text-white px-3 py-1 text-[8px] font-bold uppercase tracking-widest">
+                    {program.type === 'mastery' ? 'Mastery' : 'Short Course'}
                   </span>
                 </div>
               </div>
               
-              <div className="flex-grow flex flex-col px-4">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="text-[10px] font-mono text-cet-orange font-bold">
-                    [{String(index + 1).padStart(2, '0')}]
+              <div className="p-8 md:p-10 flex-grow flex flex-col">
+                <div className="flex justify-between items-start mb-6">
+                  <span className="text-[10px] font-mono text-slate-300">
+                    {String(index + 1).padStart(2, '0')}
                   </span>
-                  <div className="h-px flex-grow bg-slate-100"></div>
                 </div>
-                
-                <h4 className="text-xl font-display font-medium text-cet-blue mb-4 leading-tight group-hover:tracking-tight transition-all duration-500">
+                <h4 className="text-lg font-display font-bold text-cet-blue mb-4 leading-tight group-hover:text-cet-orange transition-colors">
                   {program.title}
                 </h4>
-                
-                <p className="text-slate-500 text-sm mb-10 leading-relaxed line-clamp-3 font-light">
+                <p className="text-slate-500 text-xs mb-8 leading-relaxed line-clamp-3">
                   {program.overview}
                 </p>
-                
-                <div className="mt-auto flex items-center justify-between pt-6 border-t border-slate-50">
+                <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-6">
                   <Link 
                     to={`/programmes/${program.id}`}
-                    className="group/btn relative inline-flex items-center gap-3 text-[9px] font-bold uppercase tracking-[0.25em] text-cet-blue"
+                    className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-cet-blue hover:text-cet-orange transition-colors"
                   >
-                    <span className="relative z-10">Explore Module</span>
-                    <div className="w-8 h-px bg-cet-orange transition-all duration-500 group-hover/btn:w-12"></div>
-                    <ChevronRight size={12} className="text-cet-orange" />
+                    View Details <ChevronRight size={14} />
                   </Link>
-                  
                   <Link 
                     to="/apply" 
-                    className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-300 hover:text-cet-orange transition-colors"
+                    className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-300 hover:text-cet-blue transition-colors"
                   >
-                    Enroll
+                    Apply
                   </Link>
                 </div>
               </div>

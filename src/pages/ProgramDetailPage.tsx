@@ -20,24 +20,51 @@ export default function ProgramDetailPage() {
 
   return (
     <main className="pt-32 sm:pt-40">
-      {/* Header */}
-      <div className="bg-cet-blue py-32 text-white relative overflow-hidden">
-        <img 
-          src={`${program.imageUrl || "https://lh3.googleusercontent.com/d/1NOWd8HsVfSIf-pf1Ym7wza6XMhyuF333"}=s2000`} 
-          alt="Course Header" 
-          referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-cover opacity-20 brightness-50"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-cet-blue via-cet-blue/60 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link to="/programmes" className="inline-flex items-center gap-2 text-cet-orange mb-8 hover:text-white transition-colors uppercase text-[10px] font-bold tracking-widest">
-            <ChevronLeft size={16} /> Back to Programmes
-          </Link>
-          <h1 className="text-4xl md:text-6xl font-display font-bold max-w-4xl leading-tight">
-            {program.title}
-          </h1>
-          <div className="mt-8 inline-block bg-cet-orange px-4 py-1 text-[10px] font-bold uppercase tracking-widest">
-            {program.type === 'mastery' ? 'Executive Mastery Programme' : 'Executive Short Course'}
+      {/* Header - Split Hero */}
+      <div className="bg-cet-blue text-white relative overflow-hidden">
+        {/* Background Decorative Element */}
+        <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" 
+             style={{ 
+               backgroundImage: 'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
+               backgroundSize: '40px 40px' 
+             }}>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Branding & Info */}
+            <div>
+              <Link to="/programmes" className="inline-flex items-center gap-2 text-cet-orange mb-8 hover:text-white transition-colors uppercase text-[10px] font-bold tracking-widest">
+                <ChevronLeft size={16} /> Back to Programmes
+              </Link>
+              <div className="mb-6 inline-block bg-cet-orange px-4 py-1 text-[10px] font-bold uppercase tracking-widest">
+                {program.type === 'mastery' ? 'Executive Mastery Programme' : 'Executive Short Course'}
+              </div>
+              <h1 className="text-4xl md:text-6xl font-display font-bold leading-[1.1] mb-8 tracking-tight">
+                {program.title}
+              </h1>
+              <p className="text-lg text-slate-300 font-light max-w-xl leading-relaxed border-l-2 border-cet-orange pl-6">
+                Professional accreditation for future-oriented executives and administrative leaders.
+              </p>
+            </div>
+
+            {/* Right: Prominent Certification Visual */}
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-cet-orange/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+              <div className="relative aspect-[4/3] overflow-hidden border-8 border-white/10 shadow-2xl">
+                <img 
+                  src={program.imageUrl || "https://picsum.photos/seed/header/1200/900"} 
+                  alt={program.title} 
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000 transform hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-cet-blue/20 hover:bg-transparent transition-colors duration-700"></div>
+              </div>
+              {/* Floating Quality Badge */}
+              <div className="absolute -bottom-6 -right-6 bg-cet-orange p-6 shadow-2xl hidden md:block">
+                <Users className="text-white" size={32} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
