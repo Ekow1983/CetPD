@@ -6,17 +6,17 @@ import { submitForm } from '../services/formService';
 
 const HERO_SLIDES = [
   {
-    image: 'https://drive.google.com/thumbnail?id=1u4knyb7LKTkzSmJK8k6idCL6KXzM3ZOb&sz=w2000',
+    image: 'https://lh3.googleusercontent.com/d/1u4knyb7LKTkzSmJK8k6idCL6KXzM3ZOb',
     title: <>EXECUTIVE <br /><span className="text-cet-orange italic">MASTERY</span> <br />PORTFOLIO.</>,
     caption: "Experience elite-level professional development with our flagship executive programmes and industry leadership sessions."
   },
   {
-    image: 'https://drive.google.com/thumbnail?id=1mnJvZyXJxJPEuML_ucPEFaxVBXmHAUvV&sz=w2000',
+    image: 'https://lh3.googleusercontent.com/d/1mnJvZyXJxJPEuML_ucPEFaxVBXmHAUvV',
     title: <>MASTER <br /><span className="text-cet-orange italic">EXECUTIVE</span> <br />LEADERSHIP.</>,
     caption: "Empowering the next generation of global leaders through world-class executive training and leadership development."
   },
   {
-    image: 'https://drive.google.com/thumbnail?id=1kF4dHdOP28WfzWjXRxtAU-a0jOGkJLlT&sz=w2000',
+    image: 'https://lh3.googleusercontent.com/d/1kF4dHdOP28WfzWjXRxtAU-a0jOGkJLlT',
     title: <>ADVANCE <br /><span className="text-cet-orange italic">PROFESSIONAL</span> <br />SKILLS.</>,
     caption: "Bridging the skill gap with industry-relevant certification programmes designed for modern professionals."
   }

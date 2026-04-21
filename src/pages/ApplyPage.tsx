@@ -18,7 +18,7 @@ export default function ApplyPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="h-64 md:h-[400px] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="https://drive.google.com/thumbnail?id=1UlIEhnDFdcrwblFpL_nimCR0V7duiVjg&sz=w2000" 
+                src="https://lh3.googleusercontent.com/d/1UlIEhnDFdcrwblFpL_nimCR0V7duiVjg" 
                 alt="Corporate Event" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
@@ -26,15 +26,17 @@ export default function ApplyPage() {
             </div>
             <div className="h-64 md:h-[400px] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a8-1.jpg" 
+                src="https://lh3.googleusercontent.com/d/1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7" 
                 alt="Graduation Showcase" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
               />
             </div>
             <div className="h-64 md:h-[400px] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a15.webp" 
+                src="https://lh3.googleusercontent.com/d/1lLaeWdQvJR2l2ExfpMLLaYjtKzACcZLx" 
                 alt="Modern Learning" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
               />
             </div>

@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className={`flex justify-between items-center transition-all duration-300 ${scrolled ? 'h-16 sm:h-20' : 'h-20 sm:h-32'}`}>
           <Link to="/" className="flex items-center gap-2 relative z-10">
             <img 
-              src="https://drive.google.com/thumbnail?id=1_YBaUuo9biU-dDlWN2U3JWIV_3OrbdXD&sz=w1000" 
+              src="https://lh3.googleusercontent.com/d/1_YBaUuo9biU-dDlWN2U3JWIV_3OrbdXD" 
               alt="CETPD Logo" 
               referrerPolicy="no-referrer"
               className={`w-auto object-contain transition-all duration-500 ${scrolled ? 'h-10 sm:h-14' : 'h-14 sm:h-24'}`} 

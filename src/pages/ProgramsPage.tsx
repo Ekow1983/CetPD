@@ -6,7 +6,7 @@ export default function ProgramsPage() {
     <main className="pt-32 sm:pt-40">
       <div className="bg-cet-blue py-24 text-white text-center relative overflow-hidden">
         <img 
-          src="https://drive.google.com/thumbnail?id=1Ntu_x7LAprunFLUCGeVwaG4AA76SP50O&sz=w2000" 
+          src="https://lh3.googleusercontent.com/d/1Ntu_x7LAprunFLUCGeVwaG4AA76SP50O" 
           alt="Programmes" 
           referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
@@ -27,7 +27,7 @@ export default function ProgramsPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="aspect-[16/9] overflow-hidden">
               <img 
-                src="/images/a15.webp" 
+                src="https://lh3.googleusercontent.com/d/1UlIEhnDFdcrwblFpL_nimCR0V7duiVjg" 
                 alt="Modern Learning" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover brightness-90"
@@ -55,7 +55,7 @@ export default function ProgramsPage() {
           <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="h-64 md:h-[400px] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a1.jpg" 
+                src="https://lh3.googleusercontent.com/d/18vYMJ1oEF_kJ9seolpBYqJiPQugxu8RX" 
                 alt="Learning Environment" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
@@ -63,7 +63,7 @@ export default function ProgramsPage() {
             </div>
             <div className="h-64 md:h-[400px] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a2.jpg" 
+                src="https://lh3.googleusercontent.com/d/1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7" 
                 alt="Executive Seminar" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
@@ -71,7 +71,7 @@ export default function ProgramsPage() {
             </div>
             <div className="h-64 md:h-[400px] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a5.jpg" 
+                src="https://lh3.googleusercontent.com/d/1lLaeWdQvJR2l2ExfpMLLaYjtKzACcZLx" 
                 alt="Institutional Mentorship" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"

@@ -15,7 +15,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
             <div className="flex items-center gap-2">
-              <img src="https://drive.google.com/thumbnail?id=1_YBaUuo9biU-dDlWN2U3JWIV_3OrbdXD&sz=w1000" alt="CETPD Logo" referrerPolicy="no-referrer" className="h-28 sm:h-32 w-auto object-contain bg-white p-2" />
+              <img src="https://lh3.googleusercontent.com/d/1_YBaUuo9biU-dDlWN2U3JWIV_3OrbdXD" alt="CETPD Logo" referrerPolicy="no-referrer" className="h-28 sm:h-32 w-auto object-contain bg-white p-2" />
             </div>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs transition-colors hover:text-white">
               Empowering professionals through high-standard executive training and professional development programmes in Ghana and beyond.

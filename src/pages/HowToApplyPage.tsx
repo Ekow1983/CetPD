@@ -79,7 +79,7 @@ export default function HowToApplyPage() {
           <div className="grid grid-cols-2 gap-8 py-12">
             <div className="aspect-[21/9] col-span-2 overflow-hidden bg-slate-100">
               <img 
-                src="https://drive.google.com/thumbnail?id=18vYMJ1oEF_kJ9seolpBYqJiPQugxu8RX&sz=w2000" 
+                src="https://lh3.googleusercontent.com/d/18vYMJ1oEF_kJ9seolpBYqJiPQugxu8RX" 
                 alt="Networking Gala" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover brightness-110 hover:brightness-125 transition-all duration-1000"
@@ -127,10 +127,11 @@ export default function HowToApplyPage() {
               </ul>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="aspect-square relative overflow-hidden boarder-8 border-white shadow-xl">
+              <div className="aspect-square relative overflow-hidden border-8 border-white shadow-xl">
                  <img 
-                   src="/images/a8-1.jpg" 
+                   src="https://lh3.googleusercontent.com/d/1NOWd8HsVfSIf-pf1Ym7wza6XMhyuF333" 
                    alt="Graduation" 
+                   referrerPolicy="no-referrer"
                    className="w-full h-full object-cover"
                  />
                  <div className="absolute inset-0 bg-cet-blue/10"></div>
@@ -224,22 +225,25 @@ export default function HowToApplyPage() {
           <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="aspect-[4/3] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a11.jpg" 
+                src="https://lh3.googleusercontent.com/d/1UlIEhnDFdcrwblFpL_nimCR0V7duiVjg" 
                 alt="Executive Session" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
               />
             </div>
             <div className="aspect-[4/3] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a12.jpg" 
+                src="https://lh3.googleusercontent.com/d/18vYMJ1oEF_kJ9seolpBYqJiPQugxu8RX" 
                 alt="Professional Development" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
               />
             </div>
             <div className="aspect-[4/3] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a14.jpg" 
+                src="https://lh3.googleusercontent.com/d/1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7" 
                 alt="Global Standards" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
               />
             </div>

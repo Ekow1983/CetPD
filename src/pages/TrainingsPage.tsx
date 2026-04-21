@@ -152,7 +152,7 @@ export default function TrainingsPage() {
           <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="aspect-[4/3] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="https://drive.google.com/thumbnail?id=1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7&sz=w2000" 
+                src="https://lh3.googleusercontent.com/d/1-JajJlLlJ6mkwL1EkPSnLSxc2gCtzfJ7" 
                 alt="Executive Seminar" 
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
@@ -160,15 +160,17 @@ export default function TrainingsPage() {
             </div>
             <div className="aspect-[4/3] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a4.jpg" 
+                src="https://lh3.googleusercontent.com/d/1NOWd8HsVfSIf-pf1Ym7wza6XMhyuF333" 
                 alt="Professional Workshop" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
               />
             </div>
             <div className="aspect-[4/3] overflow-hidden group border border-cet-blue/10">
               <img 
-                src="/images/a13.jpg" 
+                src="https://lh3.googleusercontent.com/d/1UlIEhnDFdcrwblFpL_nimCR0V7duiVjg" 
                 alt="Management Training" 
+                referrerPolicy="no-referrer"
                 className="w-full h-full object-cover transition-all duration-700 transform group-hover:scale-105"
               />
             </div>
