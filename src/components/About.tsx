@@ -35,7 +35,7 @@ export default function About() {
           {/* Right: Visuals */}
           <div className="relative overflow-hidden h-[400px] lg:h-full border-l border-cet-blue/10">
             <img 
-              src="https://lh3.googleusercontent.com/d/1ajc2pRlERDoD8c0dlx3IEGnoI3xP3uDS" 
+              src="https://lh3.googleusercontent.com/d/1hPuatWePBywHOnrpjhT3p2YnJHn1XDvi" 
               alt="Executive Excellence" 
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"

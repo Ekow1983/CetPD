@@ -73,7 +73,7 @@ export default function CETPDAdvantage() {
         <div className="grid md:grid-cols-2 gap-8 h-[500px]">
           <div className="relative overflow-hidden group">
             <img 
-              src="https://lh3.googleusercontent.com/d/12eaXiBrBpFQg9P5z3WLwZ_bM8XNpnnvr" 
+              src="https://lh3.googleusercontent.com/d/1SDydZs1BfSvQBvdJIR5oNu8LBhhwQZuz" 
               alt="Corporate Session" 
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
@@ -86,7 +86,7 @@ export default function CETPDAdvantage() {
           </div>
           <div className="relative overflow-hidden group">
             <img 
-              src="https://lh3.googleusercontent.com/d/1kF4dHdOP28WfzWjXRxtAU-a0jOGkJLlT" 
+              src="https://lh3.googleusercontent.com/d/1DR8F9nZsQ0XDKuvAEsatFjS8D061fEgd" 
               alt="Academic Infrastructure" 
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
