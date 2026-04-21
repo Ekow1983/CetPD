@@ -24,6 +24,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'caop',
     title: 'Associate Certified Office Professional (aCoP)',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1kceh65i_Zmu-dBZQ8V2K0F1yAY2WWy2b',
     overview: 'This course provides a comprehensive introduction to the principles and practices of office management, equipping students with the skills and knowledge necessary to excel in administrative roles. With a focus on the fundamentals of office administration, this course covers key areas such as office operations, communication, time management, and document management. Students will learn about the role of the office administrator, including managing office systems, coordinating tasks, and providing administrative support.',
     modules: [
       'OFFICE ADMINISTRATION FUNDAMENTALS: Office roles and responsibilities, Communication skills, Office software essentials (e.g., MS Office)',
@@ -54,6 +55,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'cop',
     title: 'Certified Office Professional (CoP)',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1rcXm9IJrte36cMPv_pSHgjVNJ5zQlx0L',
     overview: 'BECOME A CERTIFIED OFFICE PROFESSIONAL IN 6 MONTHS. Join the prestigious Office Management and Administrative Assistantship Programme and be Certified as an Office Professional. Affiliated with the Chartered Institute of Administrators and Management Consultants (CIAMC), this comprehensive 6-month program equips you with the skills and knowledge needed to excel in today\'s fast-paced business environment.',
     modules: [
       'OFFICE MANAGEMENT AND PRACTICES: Master fundamentals including planning, organizing, and controlling office procedures.',
@@ -78,6 +80,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'csap',
     title: 'Certified Senior Administrative Professional (CSaP)',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1fxqjEGI1PPLD7pbC54_03ielArTvNWB3',
     overview: 'BECOME A CERTIFIED ADMINISTRATIVE PROFESSIONAL IN 6 MONTHS. YOUR GATEWAY TO SENIOR ADMINISTRATIVE ROLES. Join the Advanced Certification in Office Management Proficiency Programme, designed to equip you with the advanced knowledge, skills and competencies required to excel in Senior Administrative Roles.',
     modules: [
       'OFFICE PROCEDURES, POLICIES AND TOOLS: Streamlining processes and increasing work efficiency.',
@@ -103,6 +106,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'chpm',
     title: 'Certified High-Performance Manager (CHPM)',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1rTLjE3Wzg1y1emdzszgCF0OIajUanrUU',
     overview: 'BECOME A CERTIFIED HIGH-PERFORMANCE MANAGER (CHPM). THE GOLD STANDARD CERTIFICATION PROGRAMME FOR MANAGERS. Take your career to new height by joining the rank of elite Managers. This comprehensive certification programme is designed to equip you with the skills and knowledge required to excel in top-tier managerial positions.',
     modules: [
       'PEOPLE MANAGEMENT AND SUPERVISION: Oversee daily operations and ensure seamless workflow.',
@@ -131,6 +135,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'cpa',
     title: 'Certified Professional Administrator (CPA)',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1fxqjEGI1PPLD7pbC54_03ielArTvNWB3',
     overview: 'BECOME A CERTIFIED PROFESSIONAL ADMINISTRATOR (CPA). Join Ghana\'s premier Competency-Based Certification Programme for ambitious Managers, Business and Corporate Executives, CEOs, Senior Officers, Directors, School Heads, Religious Leaders and upcoming Administrators. Gain a prestigious licence from the Chartered Institute of Administrators and Management Consultants (CIAMC) to practice.',
     modules: [
       'STRATEGIC MANAGEMENT AND LEADERSHIP',

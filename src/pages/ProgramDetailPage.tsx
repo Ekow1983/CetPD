@@ -21,22 +21,46 @@ export default function ProgramDetailPage() {
   return (
     <main className="pt-32 sm:pt-40">
       {/* Header */}
-      <div className="bg-cet-blue py-32 text-white relative overflow-hidden">
-        <img 
-          src={(program.imageUrl || "/images/a11.jpg").replace('.jpeg', '.jpg')} 
-          alt="Course Header" 
-          className="absolute inset-0 w-full h-full object-cover opacity-20 brightness-50"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-cet-blue via-cet-blue/60 to-transparent"></div>
+      <div className="bg-cet-blue py-20 sm:py-32 text-white relative overflow-hidden">
+        {/* Background Subtle Overlay */}
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src={program.imageUrl || "https://lh3.googleusercontent.com/d/1u4knyb7LKTkzSmJK8k6idCL6KXzM3ZOb"} 
+            alt="Background Pattern" 
+            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover grayscale"
+          />
+        </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <Link to="/programmes" className="inline-flex items-center gap-2 text-cet-orange mb-8 hover:text-white transition-colors uppercase text-[10px] font-bold tracking-widest">
-            <ChevronLeft size={16} /> Back to Programmes
-          </Link>
-          <h1 className="text-4xl md:text-6xl font-display font-bold max-w-4xl leading-tight">
-            {program.title}
-          </h1>
-          <div className="mt-8 inline-block bg-cet-orange px-4 py-1 text-[10px] font-bold uppercase tracking-widest">
-            {program.type === 'mastery' ? 'Executive Mastery Programme' : 'Executive Short Course'}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <Link to="/programmes" className="inline-flex items-center gap-2 text-cet-orange mb-8 hover:text-white transition-colors uppercase text-[10px] font-bold tracking-widest">
+                <ChevronLeft size={16} /> Back to Programmes
+              </Link>
+              <h1 className="text-4xl md:text-6xl font-display font-bold leading-tight mb-8">
+                {program.title}
+              </h1>
+              <div className="inline-block bg-cet-orange px-4 py-1 text-[10px] font-bold uppercase tracking-widest">
+                {program.type === 'mastery' ? 'Executive Mastery Programme' : 'Executive Short Course'}
+              </div>
+            </div>
+            
+            {program.imageUrl && (
+              <div className="relative group lg:mt-0 mt-12">
+                <div className="aspect-video relative overflow-hidden border-4 border-white/10 shadow-2xl">
+                  <img 
+                    src={program.imageUrl} 
+                    alt={program.title} 
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-cet-blue/20 group-hover:bg-transparent transition-colors"></div>
+                </div>
+                {/* Decorative Elements */}
+                <div className="absolute -top-4 -right-4 w-12 h-12 sm:w-24 sm:h-24 border-t-2 border-r-2 border-cet-orange/40"></div>
+                <div className="absolute -bottom-4 -left-4 w-12 h-12 sm:w-24 sm:h-24 border-b-2 border-l-2 border-cet-orange/40"></div>
+              </div>
+            )}
           </div>
         </div>
       </div>
