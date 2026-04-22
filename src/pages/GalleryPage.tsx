@@ -122,11 +122,11 @@ export default function GalleryPage() {
                 className="group cursor-none transition-all duration-500"
               >
                 {/* Frame Style Container */}
-                <div className="relative p-6 bg-white border border-slate-100 shadow-sm group-hover:shadow-2xl group-hover:border-cet-orange/20 transition-all duration-500">
+                <div className="relative p-4 bg-white border border-slate-100 shadow-sm group-hover:shadow-2xl group-hover:border-cet-orange/20 transition-all duration-500">
                   <div className="aspect-[3/4] overflow-hidden bg-slate-50 relative">
                     <img 
                       src={item.src} 
-                      alt={item.title}
+                      alt=""
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover transition-all duration-1000 transform group-hover:scale-105"
                     />
@@ -136,17 +136,8 @@ export default function GalleryPage() {
                     <div className="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-white/30"></div>
                   </div>
                   
-                  <div className="mt-8">
-                    <span className="text-cet-orange text-[8px] font-bold uppercase tracking-[0.3em] mb-3 block opacity-60">
-                      {item.category}
-                    </span>
-                    <h3 className="text-cet-blue font-display font-bold text-lg leading-tight uppercase tracking-tight group-hover:text-cet-orange transition-colors">
-                      {item.title}
-                    </h3>
-                  </div>
-                  
                   {/* Floating View Icon */}
-                  <div className="absolute top-10 right-10 w-12 h-12 bg-white/90 backdrop-blur-sm border border-slate-100 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 shadow-lg">
+                  <div className="absolute top-8 right-8 w-12 h-12 bg-white/90 backdrop-blur-sm border border-slate-100 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100 shadow-lg">
                     <Maximize2 size={18} className="text-cet-blue" />
                   </div>
                 </div>
@@ -198,25 +189,10 @@ export default function GalleryPage() {
               >
                 <img 
                   src={currentItem.src}
-                  alt={currentItem.title}
+                  alt=""
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-contain shadow-[0_0_80px_rgba(0,0,0,0.5)]"
                 />
-              </motion.div>
-
-              <motion.div 
-                key={`${selectedImage}-info`}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="mt-12 text-center"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <span className="text-cet-orange text-[10px] font-bold uppercase tracking-[0.4em] mb-4 block">
-                  {currentItem.category}
-                </span>
-                <h2 className="text-white font-display font-bold text-3xl md:text-5xl uppercase tracking-tighter">
-                  {currentItem.title}
-                </h2>
               </motion.div>
             </div>
           </motion.div>
