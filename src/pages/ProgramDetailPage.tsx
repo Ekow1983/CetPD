@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { PROGRAMS as STATIC_PROGRAMS } from '../data/programs';
-import { ChevronLeft, CheckCircle, Target, Users, TrendingUp, BookOpen, Clock, CreditCard, Calendar, Monitor, Gem } from 'lucide-react';
+import { ChevronLeft, CheckCircle, Target, Users, TrendingUp, BookOpen, Clock, CreditCard, Calendar, Monitor, Award, ShieldCheck, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 
 export default function ProgramDetailPage() {
@@ -20,134 +20,191 @@ export default function ProgramDetailPage() {
   if (!program) return null;
 
   return (
-    <main className="pt-32 sm:pt-40 bg-white">
-      {/* Editorial Hero Header */}
-      <section className="relative bg-cet-blue text-white overflow-hidden">
-        {/* Abstract Background Elements */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-cet-orange opacity-5 skew-x-12 translate-x-20"></div>
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 border border-white/5 rounded-full -translate-x-32"></div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 relative z-10">
-          <div className="grid lg:grid-cols-12 gap-16 items-center">
-            <div className="lg:col-span-7">
+    <main className="pt-32 sm:pt-40 bg-slate-50/50 min-h-screen">
+      {/* Institutional Hero Section */}
+      <section className="bg-white border-b border-slate-200 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col lg:flex-row min-h-[600px]">
+            {/* Left Content Column */}
+            <div className="lg:w-1/2 py-20 lg:pr-16 flex flex-col justify-center">
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
               >
-                <Link to="/programmes" className="inline-flex items-center gap-2 text-cet-orange mb-10 hover:gap-4 transition-all uppercase text-[10px] font-bold tracking-[0.4em]">
-                  <ChevronLeft size={16} /> Back to Academic Portfolio
-                </Link>
-                <h1 className="text-5xl md:text-8xl font-display font-bold leading-[0.9] tracking-tighter mb-10">
-                  {program.title.split('(')[0]}
-                  {program.title.includes('(') && (
-                    <span className="block text-cet-orange italic mt-4">
-                      ({program.title.split('(')[1]}
-                    </span>
-                  )}
+                <div className="flex items-center gap-3 mb-12">
+                  <Link to="/programmes" className="group flex items-center gap-2 text-slate-400 hover:text-cet-blue transition-colors text-[10px] font-bold uppercase tracking-[0.2em]">
+                    <ChevronLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> 
+                    Back to Programmes
+                  </Link>
+                  <span className="w-1 h-1 rounded-full bg-slate-300"></span>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cet-orange">
+                    {program.type === 'mastery' ? 'Professional Certification' : 'Executive Course'}
+                  </span>
+                </div>
+
+                <h1 className="text-4xl md:text-6xl font-display font-extrabold text-cet-blue leading-[1.1] tracking-tight mb-8">
+                  {program.title}
                 </h1>
+
+                <div className="flex flex-wrap gap-4 mb-12">
+                  <div className="flex items-center gap-2 px-4 py-2 bg-slate-100 border border-slate-200 rounded-sm">
+                    <ShieldCheck size={16} className="text-cet-orange" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">Accredited by CIAMC</span>
+                  </div>
+                  <div className="flex items-center gap-2 px-4 py-2 bg-slate-100 border border-slate-200 rounded-sm">
+                    <Award size={16} className="text-cet-orange" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-slate-600">Professional License</span>
+                  </div>
+                </div>
+
+                <p className="text-slate-500 text-lg leading-relaxed max-w-xl mb-12 font-light">
+                  {program.overview.length > 200 ? program.overview.substring(0, 200) + '...' : program.overview}
+                </p>
+
                 <div className="flex items-center gap-6">
-                  <div className="px-6 py-2 bg-cet-orange text-white text-[10px] font-bold uppercase tracking-widest shadow-lg">
-                    {program.type === 'mastery' ? 'Executive Mastery' : 'Certification'}
-                  </div>
-                  <div className="h-px w-24 bg-white/20"></div>
-                  <div className="text-white/40 text-[10px] font-bold uppercase tracking-widest">
-                    Established Excellence
-                  </div>
+                  <Link 
+                    to="/apply" 
+                    className="px-10 py-5 bg-cet-blue text-white font-bold uppercase tracking-[0.2em] text-xs hover:bg-cet-orange transition-all shadow-xl shadow-cet-blue/10 flex items-center gap-3 group"
+                  >
+                    Start Admission <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                  <a href="#curriculum" className="text-xs font-bold uppercase tracking-[0.2em] text-cet-blue hover:text-cet-orange transition-colors">
+                    View Syllabus
+                  </a>
                 </div>
               </motion.div>
             </div>
-            
-            <div className="lg:col-span-5 relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
+
+            {/* Right Image/Visual Column */}
+            <div className="lg:w-1/2 relative bg-slate-100">
+              <motion.div 
+                initial={{ opacity: 0, scale: 1.05 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative group"
+                transition={{ duration: 1.2 }}
+                className="absolute inset-0"
               >
                 {program.imageUrl && (
-                  <div className="aspect-[4/5] overflow-hidden border-[16px] border-white/5 shadow-2xl relative">
-                    <img 
-                      src={program.imageUrl} 
-                      alt={program.title} 
-                      referrerPolicy="no-referrer"
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-cet-blue/10"></div>
-                  </div>
+                  <img 
+                    src={program.imageUrl} 
+                    alt={program.title} 
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000"
+                  />
                 )}
-                {/* Float Badge */}
-                <div className="absolute -bottom-8 -left-8 bg-white p-8 shadow-2xl hidden sm:block border-t-4 border-cet-orange transform -rotate-3">
-                  <Gem className="text-cet-orange mb-4" size={32} />
-                  <p className="text-cet-blue font-display font-bold text-lg leading-tight">Accredited <br />Professional License</p>
-                </div>
-                {/* Decorative lines */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 border-t border-r border-cet-orange/20 -z-10"></div>
+                {/* Visual Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden lg:block opacity-40"></div>
+                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent hidden lg:block"></div>
               </motion.div>
+              
+              {/* Floating Quote/Detail */}
+              <div className="absolute top-12 right-12 bg-white/90 backdrop-blur-md p-8 border border-white/20 shadow-2xl hidden xl:block max-w-[280px]">
+                <p className="text-cet-blue font-display font-medium italic text-sm leading-relaxed mb-4">
+                  "Designed for the next generation of professional leaders across West Africa's corporate landscape."
+                </p>
+                <div className="h-px w-12 bg-cet-orange"></div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Modern Info Bar */}
-      <section className="border-b border-slate-100 bg-slate-50/50">
+      {/* Accreditation Banner */}
+      <div className="bg-slate-100 border-b border-slate-200 py-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-12 sm:gap-24 grayscale opacity-40">
+          <div className="flex items-center gap-2">
+            <ShieldCheck size={20} />
+            <span className="text-[10px] font-bold uppercase tracking-widest">CIAMC Registered</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Award size={20} />
+            <span className="text-[10px] font-bold uppercase tracking-widest">Industry Standard</span>
+          </div>
+          <div className="hidden sm:flex items-center gap-2">
+            <div className="h-6 w-6 border-2 border-slate-400"></div>
+            <span className="text-[10px] font-bold uppercase tracking-widest">Certified Program</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Programme Specs Grid */}
+      <section className="bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-slate-200">
+          <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-slate-100">
             {[
-              { icon: <Clock size={20} />, label: "Duration", value: program.duration || "Self-paced" },
-              { icon: <CreditCard size={20} />, label: "Tuition", value: program.fee || "Contact Sales" },
-              { icon: <Calendar size={20} />, label: "Starts", value: program.startDate || "Rolling Admission" },
-              { icon: <Monitor size={20} />, label: "Format", value: program.onlineOption ? "Hybrid / Online" : "In-Person Only" }
+              { icon: <Clock size={20} />, label: "Duration", value: program.duration || "Self-paced", sub: "Flexible Delivery" },
+              { icon: <CreditCard size={20} />, label: "Fee Structure", value: program.fee ? program.fee.split('(')[0] : "Contact us", sub: program.fee?.includes('(') ? program.fee.split('(')[1].replace(')', '') : "Installment plans" },
+              { icon: <Calendar size={20} />, label: "Next Intake", value: program.startDate || "Rolling Admission", sub: "Apply anytime" },
+              { icon: <Monitor size={20} />, label: "Learning Mode", value: program.onlineOption ? "Hybrid (accra/Virtual)" : "Campus Only", sub: "Interactive Sessions" }
             ].map((item, i) => (
-              <div key={i} className="py-10 px-8 flex flex-col items-center text-center">
-                <div className="text-cet-orange mb-3">{item.icon}</div>
-                <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-1">{item.label}</span>
-                <span className="text-cet-blue font-bold text-sm">{item.value}</span>
+              <div key={i} className="py-12 px-10">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-2 bg-slate-50 text-cet-orange">{item.icon}</div>
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">{item.label}</span>
+                </div>
+                <h4 className="text-cet-blue font-bold text-lg mb-1">{item.value}</h4>
+                <p className="text-[10px] font-medium text-slate-400 uppercase tracking-widest">{item.sub}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-32 bg-white relative">
+      {/* Main Content Layout */}
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-12 gap-20">
-            {/* Detailed Content */}
+          <div className="grid lg:grid-cols-12 gap-16">
+            
+            {/* Core Content */}
             <div className="lg:col-span-8 space-y-24">
-              {/* Overview Section */}
-              <div className="relative">
-                <div className="absolute -left-10 top-0 w-1 h-full bg-slate-100 hidden lg:block"></div>
-                <h2 className="text-3xl font-display font-bold text-cet-blue mb-8 flex items-center gap-4">
-                  <BookOpen className="text-cet-orange" size={28} /> Programme Overview
-                </h2>
-                <p className="text-slate-600 text-xl leading-relaxed font-light italic border-l-4 border-cet-orange/10 pl-8">
-                  {program.overview}
-                </p>
+              
+              {/* Detailed Overview */}
+              <div id="overview" className="scroll-mt-40">
+                <div className="mb-10 text-center lg:text-left">
+                  <h2 className="text-3xl font-display font-extrabold text-cet-blue mb-6">Experience Excellence</h2>
+                  <div className="h-1 w-20 bg-cet-orange mx-auto lg:mx-0"></div>
+                </div>
+                <div className="prose prose-slate prose-lg max-w-none">
+                  <p className="text-slate-600 leading-[1.8] font-light">
+                    {program.overview}
+                  </p>
+                </div>
               </div>
 
-              {/* Modules Section with custom cards */}
-              <div>
-                <h2 className="text-3xl font-display font-bold text-cet-blue mb-12 flex items-center gap-4">
-                  <CheckCircle className="text-cet-orange" size={28} /> Core Curriculum
-                </h2>
-                <div className="grid sm:grid-cols-2 gap-6">
+              {/* Syllabus / Curriculum */}
+              <div id="curriculum" className="scroll-mt-40">
+                <div className="flex justify-between items-end mb-12">
+                  <div>
+                    <h2 className="text-3xl font-display font-extrabold text-cet-blue mb-4">The Curriculum</h2>
+                    <p className="text-slate-400 text-sm font-medium uppercase tracking-widest">Bridging theory and professional practice</p>
+                  </div>
+                  <div className="hidden sm:block text-right">
+                    <span className="text-4xl font-display font-black text-slate-100">{program.modules.length}</span>
+                    <p className="text-[10px] font-bold text-slate-300 uppercase tracking-widest -mt-2">Academic Modules</p>
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-2 gap-4">
                   {program.modules.map((module, index) => (
                     <motion.div 
                       key={index}
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="p-8 bg-slate-50 border border-slate-100 hover:border-cet-orange/40 hover:bg-white hover:shadow-xl transition-all group"
+                      transition={{ delay: index * 0.05 }}
+                      className="p-8 bg-white border border-slate-200 group hover:border-cet-blue transition-all"
                     >
-                      <div className="text-[10px] font-mono text-slate-300 mb-4 group-hover:text-cet-orange transition-colors">
-                        MODULE {String(index + 1).padStart(2, '0')}
+                      <div className="flex items-center gap-4 mb-6">
+                        <span className="text-xs font-mono text-cet-orange font-bold">
+                          {String(index + 1).padStart(2, '0')}
+                        </span>
+                        <div className="h-px flex-1 bg-slate-100"></div>
                       </div>
-                      <h4 className="text-cet-blue font-bold text-lg leading-tight uppercase tracking-tight">
+                      <h4 className="text-cet-blue font-bold text-base leading-snug uppercase tracking-tight group-hover:text-cet-orange transition-colors">
                         {module.includes(':') ? module.split(':')[0] : module}
                       </h4>
                       {module.includes(':') && (
-                        <p className="mt-4 text-sm text-slate-500 leading-relaxed font-light">
+                        <p className="mt-4 text-xs text-slate-500 leading-relaxed font-light">
                           {module.split(':')[1]}
                         </p>
                       )}
@@ -156,23 +213,21 @@ export default function ProgramDetailPage() {
                 </div>
               </div>
 
-              {/* Objectives Section */}
+              {/* Learning Objectives */}
               {program.objectives && (
-                <div className="bg-cet-blue p-12 md:p-20 text-white relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none">
-                    <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }}></div>
+                <div className="bg-cet-blue rounded-sm p-12 md:p-20 text-white relative overflow-hidden shadow-2xl">
+                  {/* Subtle water mark */}
+                  <div className="absolute -bottom-20 -right-20 opacity-10 pointer-events-none transform rotate-12">
+                    <ShieldCheck size={400} />
                   </div>
+
                   <div className="relative z-10">
-                    <h2 className="text-3xl font-display font-bold mb-12 flex items-center gap-4">
-                      <Target className="text-cet-orange" size={28} /> Learning Objectives
-                    </h2>
-                    <div className="grid md:grid-cols-2 gap-12">
+                    <h2 className="text-3xl font-display font-extrabold mb-16 border-l-4 border-cet-orange pl-8">Strategic Outcomes</h2>
+                    <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
                       {program.objectives.map((obj, index) => (
-                        <div key={index} className="flex gap-6">
-                          <span className="text-cet-orange font-display font-black text-4xl opacity-40">
-                             {String(index + 1).padStart(2, '0')}
-                          </span>
-                          <p className="text-slate-300 leading-relaxed font-light py-2">
+                        <div key={index} className="flex gap-6 items-start group">
+                          <CheckCircle className="text-cet-orange shrink-0 mt-1" size={24} />
+                          <p className="text-slate-300 leading-relaxed text-sm font-light py-0.5 group-hover:text-white transition-colors">
                             {obj}
                           </p>
                         </div>
@@ -183,33 +238,35 @@ export default function ProgramDetailPage() {
               )}
             </div>
 
-            {/* Premium Sidebar */}
-            <div className="lg:col-span-4 space-y-16">
-              {/* Admissions requirements */}
-              <div className="p-10 border border-slate-200 bg-white shadow-sm ring-1 ring-slate-100">
-                <h3 className="text-xl font-display font-bold text-cet-blue mb-8 border-b border-slate-100 pb-4">
-                  Entry Criteria
-                </h3>
+            {/* Structured Sidebar */}
+            <div className="lg:col-span-4 space-y-8">
+              
+              {/* Admissions sidebar */}
+              <div className="p-10 border border-slate-200 bg-white">
+                <div className="flex items-center gap-3 mb-8 pb-4 border-b border-slate-100">
+                  <TrendingUp className="text-cet-orange" size={20} />
+                  <h3 className="text-lg font-display font-bold text-cet-blue">Admissions</h3>
+                </div>
                 <ul className="space-y-6">
                   {(program.requirements || program.eligibility || []).map((req, index) => (
-                    <li key={index} className="flex items-start gap-4">
-                      <div className="w-1.5 h-1.5 bg-cet-orange mt-2 shrink-0"></div>
-                      <span className="text-xs text-slate-500 leading-relaxed font-medium">
-                        {req}
-                      </span>
+                    <li key={index} className="flex items-start gap-4 text-xs text-slate-500 group">
+                      <div className="w-1 h-3 bg-slate-200 mt-1 group-hover:bg-cet-orange transition-colors"></div>
+                      <span className="leading-relaxed">{req}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Specialisations if any */}
+              {/* Specialisations */}
               {program.specialisations && (
-                <div className="p-10 bg-slate-900 text-white relative overflow-hidden">
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-cet-orange blur-[80px] opacity-20"></div>
-                  <h3 className="text-xl font-display font-bold mb-8 text-cet-orange">Specialisations</h3>
-                  <div className="space-y-3">
+                <div className="p-10 bg-slate-900 text-white">
+                  <h3 className="text-lg font-display font-bold mb-8 text-cet-orange flex items-center gap-3">
+                    <Target size={20} /> Path Specialty
+                  </h3>
+                  <div className="space-y-4">
                     {program.specialisations.map((spec, index) => (
-                      <div key={index} className="text-sm font-light text-slate-400 py-2 border-b border-white/5">
+                      <div key={index} className="flex items-center gap-3 text-xs font-light text-slate-400 group cursor-default">
+                        <div className="w-1.5 h-1.5 rounded-full border border-cet-orange/40 group-hover:bg-cet-orange"></div>
                         {spec}
                       </div>
                     ))}
@@ -217,15 +274,13 @@ export default function ProgramDetailPage() {
                 </div>
               )}
 
-              {/* Target Group */}
+              {/* Professional Profile */}
               {program.targetGroup && (
-                <div className="p-10 border border-cet-blue/10 bg-slate-50">
-                  <h3 className="text-xl font-display font-bold text-cet-blue mb-8 flex items-center gap-3">
-                    <Users className="text-cet-orange" size={20} /> Professional Profile
-                  </h3>
+                <div className="p-10 border border-slate-200 bg-white">
+                  <h3 className="text-lg font-display font-bold text-cet-blue mb-8">Executive Profile</h3>
                   <div className="flex flex-wrap gap-2">
                     {program.targetGroup.map((target, index) => (
-                      <span key={index} className="px-4 py-2 bg-white border border-slate-200 text-slate-500 text-[10px] font-bold uppercase tracking-wider">
+                      <span key={index} className="px-3 py-1.5 bg-slate-50 border border-slate-100 text-slate-400 text-[9px] font-bold uppercase tracking-wider">
                         {target}
                       </span>
                     ))}
@@ -233,36 +288,21 @@ export default function ProgramDetailPage() {
                 </div>
               )}
 
-              {/* Investment summary */}
-              {program.investment && (
-                <div className="p-10 bg-cet-orange text-white">
-                  <h3 className="text-xl font-display font-bold mb-8">Investment Summary</h3>
-                  <div className="space-y-4">
-                    {program.investment.map((line, index) => (
-                      <div key={index} className={`flex justify-between items-center text-xs ${line.includes('Total') ? 'pt-4 border-t border-white/30 font-black' : 'opacity-80'}`}>
-                        <span>{line.split(':')[0]}</span>
-                        <span className="font-bold">{line.split(':')[1]}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Final CTA */}
-              <div className="relative group overflow-hidden bg-cet-blue p-12 text-center text-white">
-                <div className="absolute inset-0 bg-cet-orange translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
-                <div className="relative z-10">
-                  <h3 className="text-2xl font-display font-bold mb-4 group-hover:text-cet-blue">Start Your Journey</h3>
-                  <p className="text-white/60 mb-10 text-sm font-light group-hover:text-cet-blue/80">
-                    Join elite professionals across West Africa today.
-                  </p>
-                  <Link 
-                    to="/apply" 
-                    className="inline-block px-10 py-4 bg-white text-cet-blue font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all w-full"
-                  >
-                    Apply Now
-                  </Link>
-                </div>
+              {/* Final Application State */}
+              <div className="p-12 bg-cet-blue text-center text-white relative overflow-hidden group">
+                {/* Decorative Pattern */}
+                <div className="absolute inset-0 opacity-5 pointer-events-none transition-transform duration-1000 group-hover:scale-110" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '15px 15px' }}></div>
+                
+                <h3 className="text-2xl font-display font-bold mb-2">Accelerate Your Career</h3>
+                <p className="text-white/60 mb-10 text-[10px] font-bold uppercase tracking-[0.2em]">Join established professionals</p>
+                
+                <Link 
+                  to="/apply" 
+                  className="inline-block px-10 py-5 bg-cet-orange text-white font-bold uppercase tracking-[0.2em] text-[10px] hover:scale-105 active:scale-95 transition-all w-full shadow-lg shadow-black/10"
+                >
+                  Download Brochure & Apply
+                </Link>
+                <p className="mt-8 text-xs text-white/40">Next application deadline: June 15, 2026</p>
               </div>
             </div>
           </div>

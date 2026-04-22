@@ -54,61 +54,55 @@ export default function Programs() {
         </div>
 
         {/* Programs Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPrograms.map((program, index) => (
             <motion.div
               layout
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               key={program.id}
-              className="flex flex-col group cursor-pointer"
+              className="group bg-white border border-slate-100 flex flex-col p-8 transition-all hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden"
               onClick={() => window.location.href = `/programmes/${program.id}`}
             >
-              <div className="aspect-[4/3] overflow-hidden mb-8 relative">
-                <img 
-                  src={program.imageUrl || "https://lh3.googleusercontent.com/d/1u4knyb7LKTkzSmJK8k6idCL6KXzM3ZOb"} 
-                  alt={program.title} 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
-                />
-                <div className="absolute top-4 left-4 bg-cet-orange text-white text-[8px] font-bold uppercase tracking-widest px-3 py-1 shadow-lg">
-                  {program.type === 'mastery' ? 'Mastery' : 'Short Course'}
-                </div>
-                <div className="absolute inset-0 border border-cet-blue/5 pointer-events-none"></div>
+              <div className="flex justify-between items-start mb-8">
+                <span className="px-3 py-1 bg-cet-blue text-white text-[8px] font-bold uppercase tracking-widest">
+                  {program.type === 'mastery' ? 'Professional' : 'Short Course'}
+                </span>
+                <span className="text-[10px] font-mono text-slate-200">
+                  REF-{String(index + 10).padStart(3, '0')}
+                </span>
               </div>
 
-              <div className="flex-1 flex flex-col">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="h-px w-8 bg-cet-orange"></div>
-                  <span className="text-[10px] font-mono text-slate-300">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                
-                <h4 className="text-xl font-display font-bold text-cet-blue mb-4 leading-tight group-hover:text-cet-orange transition-colors">
-                  {program.title}
-                </h4>
-                
-                <p className="text-slate-500 text-sm mb-8 leading-relaxed line-clamp-2">
-                  {program.overview}
-                </p>
+              <div className="aspect-video overflow-hidden mb-8 bg-slate-50 relative">
+                {program.imageUrl && (
+                  <img 
+                    src={program.imageUrl} 
+                    alt={program.title} 
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                  />
+                )}
+                <div className="absolute inset-0 bg-cet-blue/10 group-hover:bg-transparent transition-colors"></div>
+              </div>
+              
+              <h4 className="text-xl font-display font-extrabold text-cet-blue mb-4 leading-tight group-hover:text-cet-orange transition-colors uppercase tracking-tight">
+                {program.title}
+              </h4>
+              
+              <p className="text-slate-500 text-xs mb-10 leading-relaxed line-clamp-3 font-light">
+                {program.overview}
+              </p>
 
-                <div className="mt-auto flex items-center justify-between border-t border-slate-100 pt-6">
-                  <Link 
-                    to={`/programmes/${program.id}`}
-                    className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-cet-blue group-hover:text-cet-orange transition-all hover:gap-4"
-                  >
-                    View Details <ChevronRight size={14} className="text-cet-orange" />
-                  </Link>
-                  <Link 
-                    to="/apply" 
-                    className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-300 hover:text-cet-blue transition-colors"
-                  >
-                    Enroll
-                  </Link>
-                </div>
+              <div className="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between">
+                <Link 
+                  to={`/programmes/${program.id}`}
+                  className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-cet-blue hover:text-cet-orange transition-colors"
+                >
+                  View Curriculum <ChevronRight size={14} className="text-cet-orange" />
+                </Link>
+                <div className="h-1.5 w-1.5 rounded-full bg-slate-200 group-hover:bg-cet-orange transition-colors"></div>
               </div>
             </motion.div>
           ))}
