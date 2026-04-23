@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { PROGRAMS as STATIC_PROGRAMS } from '../data/programs';
 import { ChevronRight, Search } from 'lucide-react';
 
 export default function Programs() {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState<'all' | 'mastery' | 'short-course'>('all');
+  const navigate = useNavigate();
 
   const filteredPrograms = STATIC_PROGRAMS.filter(p => {
     const matchesSearch = p.title.toLowerCase().includes(searchTerm.toLowerCase());
@@ -63,8 +64,8 @@ export default function Programs() {
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
               key={program.id}
-              className="group bg-white border border-slate-100 flex flex-col p-8 transition-all hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden"
-              onClick={() => window.location.href = `/programmes/${program.id}`}
+              className="group bg-white border border-slate-100 flex flex-col p-8 transition-all hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden cursor-pointer"
+              onClick={() => navigate(`/programmes/${program.id}`)}
             >
               <div className="flex justify-between items-start mb-8">
                 <span className="px-3 py-1 bg-cet-blue text-white text-[8px] font-bold uppercase tracking-widest">
@@ -75,7 +76,7 @@ export default function Programs() {
                 </span>
               </div>
 
-              <div className="aspect-video overflow-hidden mb-8 bg-slate-50 relative">
+              <div className="aspect-[3/4] overflow-hidden mb-8 bg-slate-50 relative">
                 {program.imageUrl && (
                   <img 
                     src={program.imageUrl} 
@@ -87,9 +88,11 @@ export default function Programs() {
                 <div className="absolute inset-0 bg-cet-blue/10 group-hover:bg-transparent transition-colors"></div>
               </div>
               
-              <h4 className="text-xl font-display font-extrabold text-cet-blue mb-4 leading-tight group-hover:text-cet-orange transition-colors uppercase tracking-tight">
-                {program.title}
-              </h4>
+              <Link onClick={(e) => e.stopPropagation()} to={`/programmes/${program.id}`} className="block">
+                <h4 className="text-xl font-display font-extrabold text-cet-blue mb-4 leading-tight hover:text-cet-orange transition-colors uppercase tracking-tight">
+                  {program.title}
+                </h4>
+              </Link>
               
               <p className="text-slate-500 text-xs mb-10 leading-relaxed line-clamp-3 font-light">
                 {program.overview}
@@ -97,6 +100,7 @@ export default function Programs() {
 
               <div className="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between">
                 <Link 
+                  onClick={(e) => e.stopPropagation()}
                   to={`/programmes/${program.id}`}
                   className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-cet-blue hover:text-cet-orange transition-colors"
                 >

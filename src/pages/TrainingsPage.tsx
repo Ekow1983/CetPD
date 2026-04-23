@@ -139,12 +139,12 @@ export default function TrainingsPage() {
         {filteredDepartments.map((dept, index) => (
           <div key={dept.id} className={`flex flex-col lg:flex-row ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
             {/* Image Side */}
-            <div className="lg:w-1/2 h-[400px] lg:h-auto relative overflow-hidden group">
+            <div className="lg:w-1/2 min-h-[300px] lg:h-auto relative overflow-hidden group">
               <img 
                 src={dept.image} 
                 alt={dept.title} 
                 referrerPolicy="no-referrer"
-                className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-cet-blue/10"></div>
             </div>

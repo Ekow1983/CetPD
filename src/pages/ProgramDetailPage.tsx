@@ -99,7 +99,7 @@ export default function ProgramDetailPage() {
             </div>
 
             {/* Right Image/Visual Column */}
-            <div className="lg:w-1/2 relative bg-slate-100 group cursor-zoom-in" onClick={() => setIsImageExpanded(true)}>
+            <div className="lg:w-1/2 relative bg-slate-100 group cursor-zoom-in aspect-[3/4] lg:aspect-auto" onClick={() => setIsImageExpanded(true)}>
               <motion.div 
                 initial={{ opacity: 0, scale: 1.05 }}
                 animate={{ opacity: 1, scale: 1 }}
