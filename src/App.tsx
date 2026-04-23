@@ -1,6 +1,7 @@
 import React from 'react';
 // Image sync check: verified assets
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -16,6 +17,7 @@ import ProgramDetailPage from './pages/ProgramDetailPage';
 function AppContent() {
   return (
     <div className="min-h-screen flex flex-col">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow">
         <Routes>
