@@ -335,7 +335,7 @@ export default function ProgramDetailPage() {
                     Apply Now
                   </Link>
                 </div>
-                <p className="mt-8 text-xs text-white/40">Next application deadline: June 15, 2026</p>
+                <p className="mt-8 text-xs text-white/40">Next application deadline: June 5, 2026</p>
               </div>
             </div>
           </div>
