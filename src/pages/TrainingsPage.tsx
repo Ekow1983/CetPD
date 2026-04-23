@@ -184,33 +184,6 @@ export default function TrainingsPage() {
         ))}
       </section>
 
-      {/* Featured Gallery Footer */}
-      <section className="py-24 bg-slate-50 border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h5 className="text-cet-orange font-bold uppercase tracking-[0.3em] text-[10px] mb-4">World Class Infrastructure</h5>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-cet-blue">Learning Beyond Borders.</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              "https://lh3.googleusercontent.com/d/11ooocHl4cbZ-FCCs8SCVq7BWijnh8Wn3",
-              "https://lh3.googleusercontent.com/d/1fBPux-6PdQQh0LsRboR8hLsqbuIaaCYp",
-              "https://lh3.googleusercontent.com/d/1ENjNQH6k-7oMRr3tYjm-q-JHU5tNwrqK"
-            ].map((img, i) => (
-              <div key={i} className="aspect-square relative overflow-hidden border-8 border-white shadow-xl hover:shadow-2xl transition-all">
-                <img 
-                  src={img} 
-                  alt={`Gallery ${i}`} 
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-1000"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* CTA section */}
       <section className="relative py-32 bg-cet-blue overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-cet-orange skew-x-[15deg] translate-x-20 opacity-10"></div>
