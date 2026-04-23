@@ -1,12 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { PROGRAMS as STATIC_PROGRAMS } from '../data/programs';
-import { ChevronLeft, CheckCircle, Target, Users, TrendingUp, BookOpen, Clock, CreditCard, Calendar, Monitor, Award, ShieldCheck, ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { ChevronLeft, CheckCircle, Target, Users, TrendingUp, BookOpen, Clock, CreditCard, Calendar, Monitor, Award, ShieldCheck, ArrowRight, Maximize2, X, Download } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export default function ProgramDetailPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
+  const [isImageExpanded, setIsImageExpanded] = useState(false);
   
   const program = STATIC_PROGRAMS.find(p => p.id === id);
 
@@ -16,6 +17,27 @@ export default function ProgramDetailPage() {
       navigate('/programmes');
     }
   }, [program, navigate]);
+
+  const handleDownload = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!program?.imageUrl) return;
+    
+    try {
+      const response = await fetch(program.imageUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${program.title}-Brochure.jpg`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      // Fallback
+      window.open(program.imageUrl, '_blank');
+    }
+  };
 
   if (!program) return null;
 
@@ -77,7 +99,7 @@ export default function ProgramDetailPage() {
             </div>
 
             {/* Right Image/Visual Column */}
-            <div className="lg:w-1/2 relative bg-slate-100">
+            <div className="lg:w-1/2 relative bg-slate-100 group cursor-zoom-in" onClick={() => setIsImageExpanded(true)}>
               <motion.div 
                 initial={{ opacity: 0, scale: 1.05 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -89,16 +111,23 @@ export default function ProgramDetailPage() {
                     src={program.imageUrl} 
                     alt={program.title} 
                     referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-1000"
+                    className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
                   />
                 )}
                 {/* Visual Overlays */}
                 <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-transparent hidden lg:block opacity-40"></div>
                 <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent hidden lg:block"></div>
+                
+                {/* Enlarge Icon */}
+                <div className="absolute inset-0 bg-cet-blue/10 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-2xl scale-75 group-hover:scale-100 transition-all duration-300">
+                    <Maximize2 className="text-cet-blue" />
+                  </div>
+                </div>
               </motion.div>
               
               {/* Floating Quote/Detail */}
-              <div className="absolute top-12 right-12 bg-white/90 backdrop-blur-md p-8 border border-white/20 shadow-2xl hidden xl:block max-w-[280px]">
+              <div className="absolute top-12 right-12 bg-white/90 backdrop-blur-md p-8 border border-white/20 shadow-2xl hidden xl:block max-w-[280px] pointer-events-none">
                 <p className="text-cet-blue font-display font-medium italic text-sm leading-relaxed mb-4">
                   "Designed for the next generation of professional leaders across West Africa's corporate landscape."
                 </p>
@@ -296,18 +325,60 @@ export default function ProgramDetailPage() {
                 <h3 className="text-2xl font-display font-bold mb-2">Accelerate Your Career</h3>
                 <p className="text-white/60 mb-10 text-[10px] font-bold uppercase tracking-[0.2em]">Join established professionals</p>
                 
-                <Link 
-                  to="/apply" 
-                  className="inline-block px-10 py-5 bg-cet-orange text-white font-bold uppercase tracking-[0.2em] text-[10px] hover:scale-105 active:scale-95 transition-all w-full shadow-lg shadow-black/10"
-                >
-                  Download Brochure & Apply
-                </Link>
+                <div className="space-y-4">
+                  <button 
+                    onClick={handleDownload}
+                    className="flex items-center justify-center gap-3 px-10 py-5 bg-white text-cet-blue font-bold uppercase tracking-[0.2em] text-[10px] hover:bg-slate-100 transition-all w-full shadow-lg"
+                  >
+                    <Download size={14} /> Download Brochure
+                  </button>
+                  <Link 
+                    to="/apply" 
+                    className="inline-block px-10 py-5 bg-cet-orange text-white font-bold uppercase tracking-[0.2em] text-[10px] hover:scale-105 active:scale-95 transition-all w-full shadow-lg shadow-black/10"
+                  >
+                    Apply Now
+                  </Link>
+                </div>
                 <p className="mt-8 text-xs text-white/40">Next application deadline: June 15, 2026</p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Image Enlarge Lightbox */}
+      <AnimatePresence>
+        {isImageExpanded && program.imageUrl && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-cet-blue/95 backdrop-blur-xl flex items-center justify-center p-4 sm:p-12 cursor-zoom-out"
+            onClick={() => setIsImageExpanded(false)}
+          >
+            <button 
+              className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors"
+              onClick={() => setIsImageExpanded(false)}
+            >
+              <X size={32} />
+            </button>
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 1.05, opacity: 0, y: -20 }}
+              className="relative max-w-5xl max-h-[85vh] w-full flex items-center justify-center cursor-default"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={program.imageUrl} 
+                alt={program.title}
+                referrerPolicy="no-referrer"
+                className="max-w-full max-h-[85vh] object-contain shadow-2xl" 
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }

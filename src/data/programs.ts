@@ -135,7 +135,7 @@ export const PROGRAMS: Program[] = [
   {
     id: 'cpa',
     title: 'Certified Professional Administrator (CPA)',
-    imageUrl: 'https://lh3.googleusercontent.com/d/1fxqjEGI1PPLD7pbC54_03ielArTvNWB3',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1pvVKORP1b6ruSia0-fuo5QyjP1IUb-GQ',
     overview: 'BECOME A CERTIFIED PROFESSIONAL ADMINISTRATOR (CPA). Join Ghana\'s premier Competency-Based Certification Programme for ambitious Managers, Business and Corporate Executives, CEOs, Senior Officers, Directors, School Heads, Religious Leaders and upcoming Administrators. Gain a prestigious licence from the Chartered Institute of Administrators and Management Consultants (CIAMC) to practice.',
     modules: [
       'STRATEGIC MANAGEMENT AND LEADERSHIP',
