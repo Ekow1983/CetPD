@@ -58,10 +58,15 @@ export const PROGRAMS: Program[] = [
     imageUrl: 'https://lh3.googleusercontent.com/d/1rcXm9IJrte36cMPv_pSHgjVNJ5zQlx0L',
     overview: 'BECOME A CERTIFIED OFFICE PROFESSIONAL IN 6 MONTHS. Join the prestigious Office Management and Administrative Assistantship Programme and be Certified as an Office Professional. Affiliated with the Chartered Institute of Administrators and Management Consultants (CIAMC), this comprehensive 6-month program equips you with the skills and knowledge needed to excel in today\'s fast-paced business environment.',
     modules: [
-      'OFFICE MANAGEMENT AND PRACTICES: Master fundamentals including planning, organizing, and controlling office procedures.',
-      'RECORDS KEEPING, FILING & DOCUMENTATION: Efficient records management techniques to maintain accurate and up-to-date documentation.',
-      'RECEPTION MANAGEMENT AND PUBLIC RELATIONS: Managing front office operations and institutional image.',
-      'OFFICE PROCEDURES AND SYSTEMS: Understanding institutional structures and operational protocols.'
+      'Customer Care and Service Innovation',
+      'Understanding Office Procedures',
+      'Reception Management',
+      'Call Centre Management',
+      'Executive Assistantship',
+      'Filing and Records Management',
+      'Meeting Planning',
+      'Principles of Management',
+      'Office Management and Practices'
     ],
     objectives: [
       'Attain professional certification as an Office Professional',
