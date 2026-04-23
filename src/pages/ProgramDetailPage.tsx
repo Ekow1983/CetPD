@@ -80,10 +80,6 @@ export default function ProgramDetailPage() {
                   </div>
                 </div>
 
-                <p className="text-slate-500 text-lg leading-relaxed max-w-xl mb-12 font-light">
-                  {program.overview.length > 200 ? program.overview.substring(0, 200) + '...' : program.overview}
-                </p>
-
                 <div className="flex items-center gap-6">
                   <Link 
                     to="/apply" 
