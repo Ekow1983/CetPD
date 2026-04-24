@@ -7,19 +7,19 @@ export default function ProgramsPage() {
       <div className="bg-cet-blue py-24 text-white text-center relative overflow-hidden">
         <img 
           src="https://lh3.googleusercontent.com/d/1Ntu_x7LAprunFLUCGeVwaG4AA76SP50O" 
-          alt="Programmes" 
+          alt="Professional Programmes" 
           referrerPolicy="no-referrer"
           className="absolute inset-0 w-full h-full object-cover opacity-10"
         />
         <div className="absolute inset-0 bg-cet-blue/60 backdrop-blur-[2px]"></div>
         <div className="relative z-10">
-          <h1 className="text-5xl font-display font-bold mb-4">Our Programmes</h1>
+          <h1 className="text-5xl font-display font-bold mb-4">Professional Programmes</h1>
           <p className="text-slate-300 max-w-2xl mx-auto px-4 font-light">
             Explore our comprehensive range of executive certificates and professional development courses.
           </p>
         </div>
       </div>
-      <Programs />
+      <Programs filterType="mastery" />
 
       {/* Visual Support Section */}
       <section className="py-24 bg-slate-50 border-t border-slate-100">

@@ -14,7 +14,11 @@ export default function ProgramDetailPage() {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (!program) {
-      navigate('/programmes');
+      if (window.location.pathname.includes('/short-courses')) {
+        navigate('/short-courses');
+      } else {
+        navigate('/programmes');
+      }
     }
   }, [program, navigate]);
 
@@ -55,9 +59,9 @@ export default function ProgramDetailPage() {
                 transition={{ duration: 0.8 }}
               >
                 <div className="flex items-center gap-3 mb-12">
-                  <Link to="/programmes" className="group flex items-center gap-2 text-slate-400 hover:text-cet-blue transition-colors text-[10px] font-bold uppercase tracking-[0.2em]">
+                  <Link to={program.type === 'short-course' ? "/short-courses" : "/programmes"} className="group flex items-center gap-2 text-slate-400 hover:text-cet-blue transition-colors text-[10px] font-bold uppercase tracking-[0.2em]">
                     <ChevronLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> 
-                    Back to Programmes
+                    {program.type === 'short-course' ? 'Back to Short Courses' : 'Back to Programmes'}
                   </Link>
                   <span className="w-1 h-1 rounded-full bg-slate-300"></span>
                   <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-cet-orange">

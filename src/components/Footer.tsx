@@ -35,7 +35,8 @@ export default function Footer() {
             <ul className="space-y-4 text-slate-400 text-sm">
               <li><Link to="/" className="hover:text-cet-orange transition-colors">Home</Link></li>
               <li><Link to="/about" className="hover:text-cet-orange transition-colors">About Us</Link></li>
-              <li><Link to="/programmes" className="hover:text-cet-orange transition-colors">Programmes</Link></li>
+              <li><Link to="/programmes" className="hover:text-cet-orange transition-colors">Professional Programmes</Link></li>
+              <li><Link to="/short-courses" className="hover:text-cet-orange transition-colors">Short Courses</Link></li>
               <li><Link to="/trainings" className="hover:text-cet-orange transition-colors">Trainings</Link></li>
               <li><Link to="/gallery" className="hover:text-cet-orange transition-colors">Gallery</Link></li>
               <li><Link to="/how-to-apply" className="hover:text-cet-orange transition-colors">How to Apply</Link></li>
@@ -46,7 +47,7 @@ export default function Footer() {
 
           {/* Programmes */}
           <div>
-            <h4 className="text-lg font-bold mb-6 border-b border-white/10 pb-2 inline-block">Programmes</h4>
+            <h4 className="text-lg font-bold mb-6 border-b border-white/10 pb-2 inline-block">Professional Programmes</h4>
             <ul className="space-y-4 text-slate-400 text-sm">
               <li><Link to="/programmes/caop" className="hover:text-cet-orange transition-colors">Associate Certified Office Professional (aCoP)</Link></li>
               <li><Link to="/programmes/cop" className="hover:text-cet-orange transition-colors">Certified Office Professional (CoP)</Link></li>

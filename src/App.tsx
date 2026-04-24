@@ -13,6 +13,7 @@ import HowToApplyPage from './pages/HowToApplyPage';
 import GalleryPage from './pages/GalleryPage';
 import ContactPage from './pages/ContactPage';
 import ProgramDetailPage from './pages/ProgramDetailPage';
+import ShortCoursesPage from './pages/ShortCoursesPage';
 
 function AppContent() {
   return (
@@ -26,6 +27,8 @@ function AppContent() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/programmes" element={<ProgramsPage />} />
           <Route path="/programmes/:id" element={<ProgramDetailPage />} />
+          <Route path="/short-courses" element={<ShortCoursesPage />} />
+          <Route path="/short-courses/:id" element={<ProgramDetailPage />} />
           <Route path="/trainings" element={<TrainingsPage />} />
           <Route path="/how-to-apply" element={<HowToApplyPage />} />
           <Route path="/gallery" element={<GalleryPage />} />

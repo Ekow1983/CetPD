@@ -4,14 +4,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import { PROGRAMS as STATIC_PROGRAMS } from '../data/programs';
 import { ChevronRight, Search } from 'lucide-react';
 
-export default function Programs() {
+export default function Programs({ filterType }: { filterType?: 'mastery' | 'short-course' }) {
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeTab, setActiveTab] = useState<'all' | 'mastery' | 'short-course'>('all');
+  const [activeTab, setActiveTab] = useState<'all' | 'mastery' | 'short-course'>(filterType || 'all');
   const navigate = useNavigate();
 
   const filteredPrograms = STATIC_PROGRAMS.filter(p => {
     const matchesSearch = p.title.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesTab = activeTab === 'all' || p.type === activeTab;
+    const matchesTab = filterType ? p.type === filterType : (activeTab === 'all' || p.type === activeTab);
     return matchesSearch && matchesTab;
   });
 
@@ -21,7 +21,9 @@ export default function Programs() {
         <div className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-cet-orange font-bold uppercase tracking-[0.3em] text-[10px] mb-4">Academic Portfolio</h2>
-            <h3 className="text-4xl md:text-6xl font-display font-bold text-cet-blue">Professional Certification.</h3>
+            <h3 className="text-4xl md:text-6xl font-display font-bold text-cet-blue">
+              {filterType === 'short-course' ? 'Short Courses.' : filterType === 'mastery' ? 'Professional Programmes.' : 'Professional Certification.'}
+            </h3>
           </div>
           
           {/* Search & Tabs */}
@@ -30,27 +32,29 @@ export default function Programs() {
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
               <input 
                 type="text" 
-                placeholder="Search programmes..."
+                placeholder={filterType === 'short-course' ? 'Search short courses...' : 'Search programmes...'}
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full lg:w-80 pl-12 pr-4 py-3 bg-slate-50 border border-slate-200 focus:border-cet-orange outline-none transition-all text-sm"
               />
             </div>
-            <div className="flex gap-2">
-              {(['all', 'mastery', 'short-course'] as const).map((tab) => (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`flex-1 lg:flex-none px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all border ${
-                    activeTab === tab 
-                      ? 'bg-cet-blue text-white border-cet-blue' 
-                      : 'bg-transparent text-slate-400 border-slate-200 hover:border-cet-blue'
-                  }`}
-                >
-                  {tab.replace('-', ' ')}
-                </button>
-              ))}
-            </div>
+            {!filterType && (
+              <div className="flex gap-2">
+                {(['all', 'mastery', 'short-course'] as const).map((tab) => (
+                  <button
+                    key={tab}
+                    onClick={() => setActiveTab(tab)}
+                    className={`flex-1 lg:flex-none px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all border ${
+                      activeTab === tab 
+                        ? 'bg-cet-blue text-white border-cet-blue' 
+                        : 'bg-transparent text-slate-400 border-slate-200 hover:border-cet-blue'
+                    }`}
+                  >
+                    {tab.replace('-', ' ')}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 
@@ -65,7 +69,7 @@ export default function Programs() {
               transition={{ delay: index * 0.05 }}
               key={program.id}
               className="group bg-white border border-slate-100 flex flex-col p-8 transition-all hover:shadow-2xl hover:-translate-y-1 relative overflow-hidden cursor-pointer"
-              onClick={() => navigate(`/programmes/${program.id}`)}
+              onClick={() => navigate(filterType === 'short-course' ? `/short-courses/${program.id}` : `/programmes/${program.id}`)}
             >
               <div className="flex justify-between items-start mb-8">
                 <span className="px-3 py-1 bg-cet-blue text-white text-[8px] font-bold uppercase tracking-widest">
@@ -88,7 +92,7 @@ export default function Programs() {
                 <div className="absolute inset-0 bg-cet-blue/10 group-hover:bg-transparent transition-colors"></div>
               </div>
               
-              <Link onClick={(e) => e.stopPropagation()} to={`/programmes/${program.id}`} className="block">
+              <Link onClick={(e) => e.stopPropagation()} to={filterType === 'short-course' ? `/short-courses/${program.id}` : `/programmes/${program.id}`} className="block">
                 <h4 className="text-xl font-display font-extrabold text-cet-blue mb-4 leading-tight hover:text-cet-orange transition-colors uppercase tracking-tight">
                   {program.title}
                 </h4>
@@ -101,7 +105,7 @@ export default function Programs() {
               <div className="mt-auto pt-6 border-t border-slate-50 flex items-center justify-between">
                 <Link 
                   onClick={(e) => e.stopPropagation()}
-                  to={`/programmes/${program.id}`}
+                  to={filterType === 'short-course' ? `/short-courses/${program.id}` : `/programmes/${program.id}`}
                   className="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-cet-blue hover:text-cet-orange transition-colors"
                 >
                   View Curriculum <ChevronRight size={14} className="text-cet-orange" />

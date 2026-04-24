@@ -19,7 +19,8 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
-    { name: 'Programmes', href: '/programmes' },
+    { name: 'Professional Programmes', href: '/programmes' },
+    { name: 'Short Courses', href: '/short-courses' },
     { name: 'Trainings', href: '/trainings' },
     { name: 'How to Apply', href: '/how-to-apply' },
     { name: 'Gallery', href: '/gallery' },
